@@ -1,16 +1,21 @@
 .contacts{
   &__map{
     min-height: 500px;
+    @include mq($from:xs, $until:lg){
+      min-height: 300px;
+    }
   }
 }
 
 .office{
   margin: 60px 0 90px;
   text-align: left;
-  // &__wrapper{
-    box-shadow: 0px 1px 7px 0px rgba(30, 30, 30, 0.27);
-    border-radius: 3px;
-  // }
+  box-shadow: 0px 1px 7px 0px rgba(30, 30, 30, 0.27);
+  border-radius: 3px;
+  @include mq($from:xs, $until:lg){
+    margin: 30px 0 30px;
+  }
+
   &__title{
     margin: 0;
     padding: 20px 30px;

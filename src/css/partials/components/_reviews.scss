@@ -1,11 +1,20 @@
 .reviews-section{
   padding-bottom: 60px;
+  @include mq($from:xs, $until:lg){
+    padding-bottom: 20px;
+  }
+
   &__title{
     margin: 0;
     padding: 60px 0 20px;
     @include font-family('Proxima Nova Light', normal, normal);
     font-size: $font-size-title;
     color: $text-black;
+    @include mq($from:xs, $until:lg){
+      padding-top: 20px;
+      text-align: center;
+      font-size: $font-size-subtitle;
+    }
   }
   &__gallery{
     margin: -5px;
@@ -96,6 +105,10 @@
 
 .reviews{
   padding-bottom: 80px;
+  @include mq($from:xs, $until:lg){
+    padding-bottom: 40px;
+  }
+
   &__title{
     text-align: center; 
     margin: 0;
@@ -103,6 +116,10 @@
     @include font-family('Proxima Nova Light', normal, normal);
     font-size: $font-size-title;
     color: $text-black;
+    @include mq($from:xs, $until:lg){
+      padding-top: 30px;
+      font-size: $font-size-subtitle;
+    }    
   }
   &__block{
     display: none;
@@ -118,5 +135,8 @@
     padding-top: 20px;
     text-align: center;
     text-decoration: underline;
+    @include mq($from:xs, $until:lg){
+      padding-top: 0;
+    }
   }
 }

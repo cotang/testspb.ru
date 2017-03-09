@@ -28,18 +28,33 @@
   &__inner{
     padding: 10px 0;
     display: flex;
+    flex-wrap: wrap;
   }
   &__info{
     flex: 0 0 33.33%;
     max-width: 33.33%;
+    @include mq($from:xs, $until:md){
+      flex: 0 0 100%;
+      max-width: 100%;
+      text-align: center;
+    }
   }
   &__nav{
     flex: 0 0 33.33%;
     max-width: 33.33%;
+    @include mq($from:xs, $until:md){
+      flex: 0 0 100%;
+      max-width: 100%;
+      text-align: center;
+    }
   }
   &__widget{
     flex: 0 0 33.33%;
     max-width: 33.33%;
+    @include mq($from:xs, $until:md){
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
   }
   &__copyright{
     font-size: $font-size-small;
@@ -56,6 +71,9 @@
   }
   &__email{
     color: $grey-light;
+    &:hover, &:focus {
+      color: $text-white;
+    }
   }
 }
 
@@ -70,6 +88,9 @@
       > a{
         color: $grey-light;
         text-decoration: underline;
+        &:hover, &:focus {
+          color: $text-white;
+        }
       }
     }
   }

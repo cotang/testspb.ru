@@ -99,14 +99,12 @@ jQuery(document).ready(function($){
       $(this).hide();
   });
 
-
-
-
-
   $('.hamburger').click(function(e) { 
       e.preventDefault();
-      $(this).closest('.header').find('.nav').toggle();
+      $(this).closest('.header').find('.nav__list').toggle();
   });
+
+
 
 
   /* hamburger */

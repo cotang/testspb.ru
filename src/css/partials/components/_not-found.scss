@@ -12,6 +12,10 @@
     line-height: (24/16);
     max-width: 50%;
     margin: 0 auto 20px;
+    @include mq($from:xs, $until:lg){
+      max-width: 100%;
+    }
+
     a{
       display: block;
       margin: 10px 0;

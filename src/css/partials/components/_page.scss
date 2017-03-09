@@ -2,6 +2,9 @@
   &--front-page{
     .news-section{
       text-align: left;
+      @include mq($from:xs, $until:lg){
+        text-align: center;
+      }
       &__title{
         padding-bottom: 20px;
       }

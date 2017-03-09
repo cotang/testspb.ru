@@ -28,6 +28,7 @@
   
   &__inner{
     display: flex;
+    flex-wrap: wrap;
     align-items: flex-end;
   }
   &__img{
@@ -35,6 +36,13 @@
     flex: 0 0 30%;
     max-width: 30%;
     padding: 0 15px;
+    @include mq($from:xs, $until:md){
+      flex: 0 0 100%;
+      max-width: 100%;
+      margin-top: 0;
+      padding: 0 20%;
+    }
+
   }
 
 
@@ -49,6 +57,9 @@
     tbody{
       display: flex;
       flex-wrap: wrap;
+      @include mq($from:xs, $until:lg){
+        align-items: flex-end;
+      }
     }
     tr{
       text-align: left;
@@ -57,26 +68,39 @@
       display: block;
       margin: 15px 0;
       padding: 0 10px;
-      &:nth-of-type(5), &:nth-of-type(6){
+      @include mq($from:xs, $until:md){
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin: 5px 0;
+      }
+      &:nth-last-of-type(2){
+        @include mq($from:xs, $until:md){
+          margin: 15px 0;
+        }
+      }      
+
+      &:nth-last-of-type(1), &:nth-last-of-type(2){
         flex: 0 0 100%;
         max-width: 100%;
       }
       &:last-of-type{
         td{
+          @include mq($from:xs, $until:lg){
+            text-align: center;
+          }          
           input[type="submit"]{
             display: inline-block;
             text-align: center;
             border: none;
             outline: none;
-            border-radius: 15px; 
+            border-radius: 20px; 
             text-transform: uppercase;
             color: $text-white;
             background-color: $orange;
             padding: 10px 20px;
             margin: 0;
             &:hover, &:focus, &:active{
-              color: $orange;
-              background-color: transparent;
+              background-color: $light-orange;
             }
           }
         }
@@ -91,23 +115,43 @@
     .mcc-text{
       width: 100%;
     }
+    .mcc-label{
+      @include mq($from:xs, $until:xl){
+        font-size: 0.9em;
+      }
+    }
     .mcc-form-textarea{
-      height: 40px;
+      // height: 40px;
+    }
+    .recaptcha > div{
+      @include mq($from:xs, $until:lg){
+        margin: 0 auto;
+      }      
     }
   }
-
-
 }
 
+
+
 .form-manager{
-  padding: 0 15px 10px;
+  padding: 0 15px 20px;
   flex: 0 0 70%;
   max-width: 70%;
   color: $text-white;
+  @include mq($from:xs, $until:md){
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 0 0 20px;
+  }
+
   &__title{
-    margin: 0 0 20px;    
-    font-size: 40px;
+    margin: 0;
+    padding: 30px 0 15px;    
     @include font-family('Proxima Nova Light', normal, normal);
+    font-size: $font-size-title;    
+    @include mq($from:xs, $until:lg){
+      font-size: $font-size-subtitle;
+    }
   }
   &__info{
     margin: 15px 0;
@@ -115,25 +159,33 @@
     justify-content: center;
     align-items: baseline;
     font-size: $font-size-big;
+    @include mq($from:xs, $until:lg){
+      flex-direction: column;
+      align-items: center;
+      font-size: $font-size;
+    }
   }
   &__name{
     &:before{
       content: '';
       display: inline-block;
-      vertical-align: middle;
+      vertical-align: text-bottom;
       margin-right: .3em;
-      margin-bottom: .2em;
       @include sprite($s-manager-person);
     } 
   }
   &__skype{
     color: $text-white;
-    // font-size: 1.1em;
     margin-left: 1em;
+    @include mq($from:xs, $until:lg){
+      margin-left: 0;
+      margin-top: 10px;
+    }
+
     &:before{
       content: '';
       display: inline-block;
-      vertical-align: middle;
+      vertical-align: text-bottom;
       margin-right: .3em;
       @include sprite($s-manager-skype);
     }
@@ -143,12 +195,16 @@
   }
   &__email{
     color: $text-white;
-    // font-size: 1.1em;
     margin-left: 1em;
+    @include mq($from:xs, $until:lg){
+      margin-left: 0;
+      margin-top: 10px;
+    }
+
     &:before{
       content: '';
       display: inline-block;
-      vertical-align: middle;
+      vertical-align: text-bottom;
       margin-right: .3em;
       @include sprite($s-manager-email);
     }

@@ -1,22 +1,23 @@
 include ../abstracts/bemto/bemto.pug
 
 +b.SECTION.map
-  +e.inner
-  .container
-    +e.text
-      +b.map-contacts(itemscope, itemtype="http://schema.org/ContactPoint")
-        +e.H2.title Контакты
-        +e.info 
-          +e.address Кондратьевский пр., д. 62, к. 4
-          +e.time 9:00- 20:00 пн-пт
-          +e.tel-wrapper
-            a(href="tel:+78123212211", target="_blank", itemprop="telephone") +7 812 321-22-11
-          +e.email-wrapper 
-            a(href="mailto:info@itservisspb.ru", target="_blank", itemprop="email") info@itservisspb.ru
-          +e.btn          
-            +b.A.btn(href="#", data-form='call') Обратный звонок
+  +e.text
+    .container
+      +e.block
+        +b.map-contacts(itemscope, itemtype="http://schema.org/ContactPoint")
+          +e.H2.title Контакты
+          +e.info 
+            +e.address Кондратьевский пр., д. 62, к. 4
+            +e.time 9:00- 20:00 пн-пт
+            +e.tel-wrapper
+              a(href="tel:+78123212211", target="_blank", itemprop="telephone") +7 812 321-22-11
+            +e.email-wrapper 
+              a(href="mailto:info@itservisspb.ru", target="_blank", itemprop="email") info@itservisspb.ru
+            +e.btn          
+              +b.A.btn(href="#", data-form='call') Обратный звонок
 
-          +e.more(href='page-contacts.html') + еще 5 офисов по России
+            +e.more(href='page-contacts.html') + еще 5 офисов по России
+  +e.inner
 
 
 

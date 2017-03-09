@@ -31,14 +31,21 @@
   &__title{
     margin: 0 0 10px;
     color: $text-white;
-    font-size: 35px;
     @include font-family('Proxima Nova Light', normal, normal);
+    font-size: 35px;
+    @include mq($from:xs, $until:lg){
+      font-size: $font-size-subtitle;
+    }
   }
 
 
   &--index{
     min-height: 500px;
     padding-top: 80px;
+    @include mq($from:xs, $until:lg){
+      padding-top: 40px;
+    }
+
     &:before{
       top: -5px;
       background-image: url(../img/bg-spb.png);
@@ -50,14 +57,20 @@
     .form-cert__title{
       margin: 0 0 10px;
       color: $text-white;
-      font-size: 40px;
+      font-size: $font-size-title;
       @include font-family('Proxima Nova Regular', normal, normal);
       text-transform: uppercase;
+      @include mq($from:xs, $until:lg){
+        font-size: $font-size-subtitle;
+      }
     }
     .form-cert__text{
       color: $text-white;
       font-size: 24px;
       margin-bottom: 20px;
+      @include mq($from:xs, $until:lg){
+        font-size: $font-size;
+      }
     } 
   }
 
@@ -71,6 +84,9 @@
     tbody{
       display: flex;
       flex-wrap: wrap;
+      @include mq($from:xs, $until:lg){
+        align-items: flex-end;
+      }
     }
     tr{      
       flex: 0 0 25%;
@@ -78,7 +94,18 @@
       display: block;
       margin: 15px 0;
       padding: 0 10px;
-      &:nth-of-type(5), &:nth-of-type(6){
+      @include mq($from:xs, $until:md){
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin: 5px 0;
+      }
+      &:nth-last-of-type(2){
+        @include mq($from:xs, $until:md){
+          margin: 15px 0;
+        }
+      } 
+
+      &:nth-last-of-type(1), &:nth-last-of-type(2){
         flex: 0 0 100%;
         max-width: 100%;
       }
@@ -96,8 +123,7 @@
             padding: 15px 20px;
             margin: 0;
             &:hover, &:focus, &:active{
-              color: $orange;
-              background-color: transparent;
+              background-color: $light-orange;
             }
           }
         }

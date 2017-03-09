@@ -8,10 +8,17 @@
     @include font-family('Proxima Nova Light', normal, normal);
     font-size: $font-size-title;
     color: $text-black;
+    @include mq($from:xs, $until:lg){
+      padding-top: 40px;
+      font-size: $font-size-subtitle;
+    }
   }
   &__text{
     margin: 0 16.66%;
     line-height: 1.75;
+    @include mq($from:xs, $until:sm){
+      margin: 0;
+    }
   }
   &__download{
     text-decoration: underline;

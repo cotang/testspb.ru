@@ -6,6 +6,10 @@
     @include font-family('Proxima Nova Light', normal, normal);
     font-size: $font-size-title;
     color: $text-black;
+    @include mq($from:xs, $until:lg){
+      font-size: 28px;
+      @include font-family('Proxima Nova Regular', normal, normal);
+    }
   }
   &__text{
     h2, h3, h4, h5, h6{
@@ -27,6 +31,10 @@
     float: left;
     margin: 0 20px 20px 0;
     max-width: 350px;
+    @include mq($from:xs, $until:lg){
+      margin: 0 0 20px;
+      max-width: initial;
+    }
   }
   &__btn{
     margin: 20px 0;
@@ -39,6 +47,10 @@
     float: right;
     margin: 0 0 20px 20px;
     max-width: 400px;
+    @include mq($from:xs, $until:lg){
+      margin: 0 0 20px;
+      max-width: initial;
+    }
   }
 }
 

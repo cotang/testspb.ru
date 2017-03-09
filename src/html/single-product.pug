@@ -16,6 +16,11 @@ block content
     // Content
     +b.SECTION.content(itemscope, itemtype="http://schema.org/Article")
       .container
+        +e.H1.title(itemprop="headline") Сертификат на мясо
+        +e.img
+          img(src="img/meat.jpg", alt="meat", title="meat")
+          +e.btn
+            +b.A.btn--blue(href="#", data-form='call') Получить бесплатную консультацию специалиста
         +e.required-docs
           +b.content-docs
             +e.H3.title Необходимые документы
@@ -35,11 +40,6 @@ block content
               li Регистрация технических условий
             +e.btn
               +b.A.btn(href="#", data-form='application') Заказать
-        +e.img
-          img(src="img/meat.jpg", alt="meat", title="meat")
-          +e.btn
-            +b.A.btn--blue(href="#", data-form='call') Получить бесплатную консультацию специалиста
-        +e.H1.title(itemprop="headline") Сертификат на мясо
         //- +e.excerpt 
         //-   h2 Формирование проблемы
         //-   p Независимо от вида их промышленной переработки, мясные продукты в качестве продукта питания нуждаются в подтверждении безопасности.  На сегодня сертификат на мясо кролика и птицы, а также говядину, баранину, телятину, свинину, конину, мясные полуфабрикаты, консервы, субпродукты, животный жир, колбасу, желатин и бульонные кубики оформляется добровольно, дополняя ставшее обязательным декларирование мяса по нужным параметрам.

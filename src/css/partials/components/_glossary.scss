@@ -18,6 +18,12 @@
       color: $text-color;
       display: inline-block;
       padding: 3px;
+      &:hover, &:focus {
+        color: $link-color;
+      }
+      &:active {
+        color: $link-color-active;
+      }
     }
   }
   &__list{
@@ -28,6 +34,11 @@
     list-style-type: none;
     columns: 4;
     font-size: $font-size-small;
+    @include mq($from:xs, $until:md){
+      columns: 2;
+      padding: 0;
+    }
+
     .menu-item{
       display: inline-block;
       vertical-align: top;
@@ -35,6 +46,12 @@
       margin: 10px 0;
       a{
         color: $text-color;
+        &:hover, &:focus {
+          color: $link-color;
+        }
+        &:active {
+          color: $link-color-active;
+        }
       }
     }
   }
