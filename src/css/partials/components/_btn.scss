@@ -1,0 +1,31 @@
+.btn{
+  display: inline-block;
+  text-align: center;
+  border: 3px solid transparent;
+  outline: none;
+  border-radius: 20px; 
+  text-transform: uppercase;
+  color: $text-white;
+  background-color: $orange;
+  padding: 10px 20px;
+  margin: 0;
+  &:hover, &:focus, &:active{
+    color: $orange;
+    background-color: transparent;
+    border: 3px solid $orange;
+    text-decoration: none;
+  }
+
+
+  &--blue{
+    background-color: $blue;
+    &:hover, &:focus, &:active{
+      color: $blue;
+      background-color: transparent;
+      border: 3px solid $blue;
+      text-decoration: none;
+    }
+  }
+
+}
+

@@ -1,0 +1,25 @@
+.pagination{
+  margin-top: 25px;
+  margin-bottom: 70px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+
+  &__number{
+    text-decoration: underline;
+    display: inline-block;
+    margin: 0 3px;
+    padding: 3px;
+    color: $text-color;
+    &:hover, &:focus, &:active{
+      color: $red;
+    }
+    &--current{
+      color: $red;
+    }
+  }
+  &__dots{
+    margin: 0 3px
+  }
+}

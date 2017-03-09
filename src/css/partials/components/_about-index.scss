@@ -1,0 +1,19 @@
+.about-index{
+  background-color: $grey-bg;
+  text-align: center;
+  padding-bottom: 70px;
+  &__title{    
+    margin: 0;
+    padding: 60px 0 0px;
+    @include font-family('Proxima Nova Light', normal, normal);
+    font-size: $font-size-title;
+    color: $text-black;
+  }
+  &__text{
+    margin: 0 16.66%;
+    line-height: 1.75;
+  }
+  &__download{
+    text-decoration: underline;
+  }
+}

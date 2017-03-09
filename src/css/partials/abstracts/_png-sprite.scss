@@ -1,0 +1,365 @@
+// SCSS variables are information about icon's compiled state, stored under its original file name
+//
+// .icon-home {
+//   width: $icon-home-width;
+// }
+//
+// The large array-like variables contain all information about a single icon
+// $icon-home: x y offset_x offset_y width height total_width total_height image_path;
+//
+// At the bottom of this section, we provide information about the spritesheet itself
+// $spritesheet: width height image $spritesheet-sprites;
+$s-about-manager-email-name: 's-about-manager-email';
+$s-about-manager-email-x: 118px;
+$s-about-manager-email-y: 50px;
+$s-about-manager-email-offset-x: -118px;
+$s-about-manager-email-offset-y: -50px;
+$s-about-manager-email-width: 18px;
+$s-about-manager-email-height: 19px;
+$s-about-manager-email-total-width: 152px;
+$s-about-manager-email-total-height: 132px;
+$s-about-manager-email-image: '../img/png-sprite.png';
+$s-about-manager-email: (118px, 50px, -118px, -50px, 18px, 19px, 152px, 132px, '../img/png-sprite.png', 's-about-manager-email', );
+$s-about-manager-icq-name: 's-about-manager-icq';
+$s-about-manager-icq-x: 118px;
+$s-about-manager-icq-y: 71px;
+$s-about-manager-icq-offset-x: -118px;
+$s-about-manager-icq-offset-y: -71px;
+$s-about-manager-icq-width: 18px;
+$s-about-manager-icq-height: 17px;
+$s-about-manager-icq-total-width: 152px;
+$s-about-manager-icq-total-height: 132px;
+$s-about-manager-icq-image: '../img/png-sprite.png';
+$s-about-manager-icq: (118px, 71px, -118px, -71px, 18px, 17px, 152px, 132px, '../img/png-sprite.png', 's-about-manager-icq', );
+$s-about-manager-skype-name: 's-about-manager-skype';
+$s-about-manager-skype-x: 57px;
+$s-about-manager-skype-y: 34px;
+$s-about-manager-skype-offset-x: -57px;
+$s-about-manager-skype-offset-y: -34px;
+$s-about-manager-skype-width: 17px;
+$s-about-manager-skype-height: 17px;
+$s-about-manager-skype-total-width: 152px;
+$s-about-manager-skype-total-height: 132px;
+$s-about-manager-skype-image: '../img/png-sprite.png';
+$s-about-manager-skype: (57px, 34px, -57px, -34px, 17px, 17px, 152px, 132px, '../img/png-sprite.png', 's-about-manager-skype', );
+$s-manager-email-name: 's-manager-email';
+$s-manager-email-x: 46px;
+$s-manager-email-y: 90px;
+$s-manager-email-offset-x: -46px;
+$s-manager-email-offset-y: -90px;
+$s-manager-email-width: 21px;
+$s-manager-email-height: 22px;
+$s-manager-email-total-width: 152px;
+$s-manager-email-total-height: 132px;
+$s-manager-email-image: '../img/png-sprite.png';
+$s-manager-email: (46px, 90px, -46px, -90px, 21px, 22px, 152px, 132px, '../img/png-sprite.png', 's-manager-email', );
+$s-manager-person-name: 's-manager-person';
+$s-manager-person-x: 0px;
+$s-manager-person-y: 90px;
+$s-manager-person-offset-x: 0px;
+$s-manager-person-offset-y: -90px;
+$s-manager-person-width: 20px;
+$s-manager-person-height: 25px;
+$s-manager-person-total-width: 152px;
+$s-manager-person-total-height: 132px;
+$s-manager-person-image: '../img/png-sprite.png';
+$s-manager-person: (0px, 90px, 0px, -90px, 20px, 25px, 152px, 132px, '../img/png-sprite.png', 's-manager-person', );
+$s-manager-skype-name: 's-manager-skype';
+$s-manager-skype-x: 79px;
+$s-manager-skype-y: 34px;
+$s-manager-skype-offset-x: -79px;
+$s-manager-skype-offset-y: -34px;
+$s-manager-skype-width: 21px;
+$s-manager-skype-height: 21px;
+$s-manager-skype-total-width: 152px;
+$s-manager-skype-total-height: 132px;
+$s-manager-skype-image: '../img/png-sprite.png';
+$s-manager-skype: (79px, 34px, -79px, -34px, 21px, 21px, 152px, 132px, '../img/png-sprite.png', 's-manager-skype', );
+$s-minus-name: 's-minus';
+$s-minus-x: 22px;
+$s-minus-y: 90px;
+$s-minus-offset-x: -22px;
+$s-minus-offset-y: -90px;
+$s-minus-width: 22px;
+$s-minus-height: 22px;
+$s-minus-total-width: 152px;
+$s-minus-total-height: 132px;
+$s-minus-image: '../img/png-sprite.png';
+$s-minus: (22px, 90px, -22px, -90px, 22px, 22px, 152px, 132px, '../img/png-sprite.png', 's-minus', );
+$s-offer-alcohol-blue-name: 's-offer-alcohol-blue';
+$s-offer-alcohol-blue-x: 17px;
+$s-offer-alcohol-blue-y: 117px;
+$s-offer-alcohol-blue-offset-x: -17px;
+$s-offer-alcohol-blue-offset-y: -117px;
+$s-offer-alcohol-blue-width: 15px;
+$s-offer-alcohol-blue-height: 15px;
+$s-offer-alcohol-blue-total-width: 152px;
+$s-offer-alcohol-blue-total-height: 132px;
+$s-offer-alcohol-blue-image: '../img/png-sprite.png';
+$s-offer-alcohol-blue: (17px, 117px, -17px, -117px, 15px, 15px, 152px, 132px, '../img/png-sprite.png', 's-offer-alcohol-blue', );
+$s-offer-alcohol-grey-name: 's-offer-alcohol-grey';
+$s-offer-alcohol-grey-x: 0px;
+$s-offer-alcohol-grey-y: 117px;
+$s-offer-alcohol-grey-offset-x: 0px;
+$s-offer-alcohol-grey-offset-y: -117px;
+$s-offer-alcohol-grey-width: 15px;
+$s-offer-alcohol-grey-height: 15px;
+$s-offer-alcohol-grey-total-width: 152px;
+$s-offer-alcohol-grey-total-height: 132px;
+$s-offer-alcohol-grey-image: '../img/png-sprite.png';
+$s-offer-alcohol-grey: (0px, 117px, 0px, -117px, 15px, 15px, 152px, 132px, '../img/png-sprite.png', 's-offer-alcohol-grey', );
+$s-offer-apple-blue-name: 's-offer-apple-blue';
+$s-offer-apple-blue-x: 118px;
+$s-offer-apple-blue-y: 90px;
+$s-offer-apple-blue-offset-x: -118px;
+$s-offer-apple-blue-offset-y: -90px;
+$s-offer-apple-blue-width: 15px;
+$s-offer-apple-blue-height: 20px;
+$s-offer-apple-blue-total-width: 152px;
+$s-offer-apple-blue-total-height: 132px;
+$s-offer-apple-blue-image: '../img/png-sprite.png';
+$s-offer-apple-blue: (118px, 90px, -118px, -90px, 15px, 20px, 152px, 132px, '../img/png-sprite.png', 's-offer-apple-blue', );
+$s-offer-apple-grey-name: 's-offer-apple-grey';
+$s-offer-apple-grey-x: 40px;
+$s-offer-apple-grey-y: 34px;
+$s-offer-apple-grey-offset-x: -40px;
+$s-offer-apple-grey-offset-y: -34px;
+$s-offer-apple-grey-width: 15px;
+$s-offer-apple-grey-height: 20px;
+$s-offer-apple-grey-total-width: 152px;
+$s-offer-apple-grey-total-height: 132px;
+$s-offer-apple-grey-image: '../img/png-sprite.png';
+$s-offer-apple-grey: (40px, 34px, -40px, -34px, 15px, 20px, 152px, 132px, '../img/png-sprite.png', 's-offer-apple-grey', );
+$s-offer-clothes-blue-name: 's-offer-clothes-blue';
+$s-offer-clothes-blue-x: 138px;
+$s-offer-clothes-blue-y: 0px;
+$s-offer-clothes-blue-offset-x: -138px;
+$s-offer-clothes-blue-offset-y: 0px;
+$s-offer-clothes-blue-width: 14px;
+$s-offer-clothes-blue-height: 16px;
+$s-offer-clothes-blue-total-width: 152px;
+$s-offer-clothes-blue-total-height: 132px;
+$s-offer-clothes-blue-image: '../img/png-sprite.png';
+$s-offer-clothes-blue: (138px, 0px, -138px, 0px, 14px, 16px, 152px, 132px, '../img/png-sprite.png', 's-offer-clothes-blue', );
+$s-offer-clothes-grey-name: 's-offer-clothes-grey';
+$s-offer-clothes-grey-x: 102px;
+$s-offer-clothes-grey-y: 34px;
+$s-offer-clothes-grey-offset-x: -102px;
+$s-offer-clothes-grey-offset-y: -34px;
+$s-offer-clothes-grey-width: 14px;
+$s-offer-clothes-grey-height: 16px;
+$s-offer-clothes-grey-total-width: 152px;
+$s-offer-clothes-grey-total-height: 132px;
+$s-offer-clothes-grey-image: '../img/png-sprite.png';
+$s-offer-clothes-grey: (102px, 34px, -102px, -34px, 14px, 16px, 152px, 132px, '../img/png-sprite.png', 's-offer-clothes-grey', );
+$s-offer-cosmetics-blue-name: 's-offer-cosmetics-blue';
+$s-offer-cosmetics-blue-x: 118px;
+$s-offer-cosmetics-blue-y: 0px;
+$s-offer-cosmetics-blue-offset-x: -118px;
+$s-offer-cosmetics-blue-offset-y: 0px;
+$s-offer-cosmetics-blue-width: 18px;
+$s-offer-cosmetics-blue-height: 23px;
+$s-offer-cosmetics-blue-total-width: 152px;
+$s-offer-cosmetics-blue-total-height: 132px;
+$s-offer-cosmetics-blue-image: '../img/png-sprite.png';
+$s-offer-cosmetics-blue: (118px, 0px, -118px, 0px, 18px, 23px, 152px, 132px, '../img/png-sprite.png', 's-offer-cosmetics-blue', );
+$s-offer-cosmetics-grey-name: 's-offer-cosmetics-grey';
+$s-offer-cosmetics-grey-x: 118px;
+$s-offer-cosmetics-grey-y: 25px;
+$s-offer-cosmetics-grey-offset-x: -118px;
+$s-offer-cosmetics-grey-offset-y: -25px;
+$s-offer-cosmetics-grey-width: 18px;
+$s-offer-cosmetics-grey-height: 23px;
+$s-offer-cosmetics-grey-total-width: 152px;
+$s-offer-cosmetics-grey-total-height: 132px;
+$s-offer-cosmetics-grey-image: '../img/png-sprite.png';
+$s-offer-cosmetics-grey: (118px, 25px, -118px, -25px, 18px, 23px, 152px, 132px, '../img/png-sprite.png', 's-offer-cosmetics-grey', );
+$s-offer-doc-blue-name: 's-offer-doc-blue';
+$s-offer-doc-blue-x: 0px;
+$s-offer-doc-blue-y: 57px;
+$s-offer-doc-blue-offset-x: 0px;
+$s-offer-doc-blue-offset-y: -57px;
+$s-offer-doc-blue-width: 26px;
+$s-offer-doc-blue-height: 31px;
+$s-offer-doc-blue-total-width: 152px;
+$s-offer-doc-blue-total-height: 132px;
+$s-offer-doc-blue-image: '../img/png-sprite.png';
+$s-offer-doc-blue: (0px, 57px, 0px, -57px, 26px, 31px, 152px, 132px, '../img/png-sprite.png', 's-offer-doc-blue', );
+$s-offer-doc-grey-name: 's-offer-doc-grey';
+$s-offer-doc-grey-x: 28px;
+$s-offer-doc-grey-y: 57px;
+$s-offer-doc-grey-offset-x: -28px;
+$s-offer-doc-grey-offset-y: -57px;
+$s-offer-doc-grey-width: 26px;
+$s-offer-doc-grey-height: 31px;
+$s-offer-doc-grey-total-width: 152px;
+$s-offer-doc-grey-total-height: 132px;
+$s-offer-doc-grey-image: '../img/png-sprite.png';
+$s-offer-doc-grey: (28px, 57px, -28px, -57px, 26px, 31px, 152px, 132px, '../img/png-sprite.png', 's-offer-doc-grey', );
+$s-offer-production-blue-name: 's-offer-production-blue';
+$s-offer-production-blue-x: 40px;
+$s-offer-production-blue-y: 0px;
+$s-offer-production-blue-offset-x: -40px;
+$s-offer-production-blue-offset-y: 0px;
+$s-offer-production-blue-width: 37px;
+$s-offer-production-blue-height: 32px;
+$s-offer-production-blue-total-width: 152px;
+$s-offer-production-blue-total-height: 132px;
+$s-offer-production-blue-image: '../img/png-sprite.png';
+$s-offer-production-blue: (40px, 0px, -40px, 0px, 37px, 32px, 152px, 132px, '../img/png-sprite.png', 's-offer-production-blue', );
+$s-offer-production-grey-name: 's-offer-production-grey';
+$s-offer-production-grey-x: 79px;
+$s-offer-production-grey-y: 0px;
+$s-offer-production-grey-offset-x: -79px;
+$s-offer-production-grey-offset-y: 0px;
+$s-offer-production-grey-width: 37px;
+$s-offer-production-grey-height: 32px;
+$s-offer-production-grey-total-width: 152px;
+$s-offer-production-grey-total-height: 132px;
+$s-offer-production-grey-image: '../img/png-sprite.png';
+$s-offer-production-grey: (79px, 0px, -79px, 0px, 37px, 32px, 152px, 132px, '../img/png-sprite.png', 's-offer-production-grey', );
+$s-offer-shoes-blue-name: 's-offer-shoes-blue';
+$s-offer-shoes-blue-x: 52px;
+$s-offer-shoes-blue-y: 117px;
+$s-offer-shoes-blue-offset-x: -52px;
+$s-offer-shoes-blue-offset-y: -117px;
+$s-offer-shoes-blue-width: 16px;
+$s-offer-shoes-blue-height: 14px;
+$s-offer-shoes-blue-total-width: 152px;
+$s-offer-shoes-blue-total-height: 132px;
+$s-offer-shoes-blue-image: '../img/png-sprite.png';
+$s-offer-shoes-blue: (52px, 117px, -52px, -117px, 16px, 14px, 152px, 132px, '../img/png-sprite.png', 's-offer-shoes-blue', );
+$s-offer-shoes-grey-name: 's-offer-shoes-grey';
+$s-offer-shoes-grey-x: 34px;
+$s-offer-shoes-grey-y: 117px;
+$s-offer-shoes-grey-offset-x: -34px;
+$s-offer-shoes-grey-offset-y: -117px;
+$s-offer-shoes-grey-width: 16px;
+$s-offer-shoes-grey-height: 14px;
+$s-offer-shoes-grey-total-width: 152px;
+$s-offer-shoes-grey-total-height: 132px;
+$s-offer-shoes-grey-image: '../img/png-sprite.png';
+$s-offer-shoes-grey: (34px, 117px, -34px, -117px, 16px, 14px, 152px, 132px, '../img/png-sprite.png', 's-offer-shoes-grey', );
+$s-offer-toys-blue-name: 's-offer-toys-blue';
+$s-offer-toys-blue-x: 69px;
+$s-offer-toys-blue-y: 90px;
+$s-offer-toys-blue-offset-x: -69px;
+$s-offer-toys-blue-offset-y: -90px;
+$s-offer-toys-blue-width: 16px;
+$s-offer-toys-blue-height: 16px;
+$s-offer-toys-blue-total-width: 152px;
+$s-offer-toys-blue-total-height: 132px;
+$s-offer-toys-blue-image: '../img/png-sprite.png';
+$s-offer-toys-blue: (69px, 90px, -69px, -90px, 16px, 16px, 152px, 132px, '../img/png-sprite.png', 's-offer-toys-blue', );
+$s-offer-toys-grey-name: 's-offer-toys-grey';
+$s-offer-toys-grey-x: 87px;
+$s-offer-toys-grey-y: 90px;
+$s-offer-toys-grey-offset-x: -87px;
+$s-offer-toys-grey-offset-y: -90px;
+$s-offer-toys-grey-width: 16px;
+$s-offer-toys-grey-height: 16px;
+$s-offer-toys-grey-total-width: 152px;
+$s-offer-toys-grey-total-height: 132px;
+$s-offer-toys-grey-image: '../img/png-sprite.png';
+$s-offer-toys-grey: (87px, 90px, -87px, -90px, 16px, 16px, 152px, 132px, '../img/png-sprite.png', 's-offer-toys-grey', );
+$s-pin-name: 's-pin';
+$s-pin-x: 0px;
+$s-pin-y: 0px;
+$s-pin-offset-x: 0px;
+$s-pin-offset-y: 0px;
+$s-pin-width: 38px;
+$s-pin-height: 55px;
+$s-pin-total-width: 152px;
+$s-pin-total-height: 132px;
+$s-pin-image: '../img/png-sprite.png';
+$s-pin: (0px, 0px, 0px, 0px, 38px, 55px, 152px, 132px, '../img/png-sprite.png', 's-pin', );
+$s-plus-name: 's-plus';
+$s-plus-x: 81px;
+$s-plus-y: 57px;
+$s-plus-offset-x: -81px;
+$s-plus-offset-y: -57px;
+$s-plus-width: 22px;
+$s-plus-height: 22px;
+$s-plus-total-width: 152px;
+$s-plus-total-height: 132px;
+$s-plus-image: '../img/png-sprite.png';
+$s-plus: (81px, 57px, -81px, -57px, 22px, 22px, 152px, 132px, '../img/png-sprite.png', 's-plus', );
+$s-round-minus-name: 's-round-minus';
+$s-round-minus-x: 56px;
+$s-round-minus-y: 57px;
+$s-round-minus-offset-x: -56px;
+$s-round-minus-offset-y: -57px;
+$s-round-minus-width: 23px;
+$s-round-minus-height: 23px;
+$s-round-minus-total-width: 152px;
+$s-round-minus-total-height: 132px;
+$s-round-minus-image: '../img/png-sprite.png';
+$s-round-minus: (56px, 57px, -56px, -57px, 23px, 23px, 152px, 132px, '../img/png-sprite.png', 's-round-minus', );
+$spritesheet-width: 152px;
+$spritesheet-height: 132px;
+$spritesheet-image: '../img/png-sprite.png';
+$spritesheet-sprites: ($s-about-manager-email, $s-about-manager-icq, $s-about-manager-skype, $s-manager-email, $s-manager-person, $s-manager-skype, $s-minus, $s-offer-alcohol-blue, $s-offer-alcohol-grey, $s-offer-apple-blue, $s-offer-apple-grey, $s-offer-clothes-blue, $s-offer-clothes-grey, $s-offer-cosmetics-blue, $s-offer-cosmetics-grey, $s-offer-doc-blue, $s-offer-doc-grey, $s-offer-production-blue, $s-offer-production-grey, $s-offer-shoes-blue, $s-offer-shoes-grey, $s-offer-toys-blue, $s-offer-toys-grey, $s-pin, $s-plus, $s-round-minus, );
+$spritesheet: (152px, 132px, '../img/png-sprite.png', $spritesheet-sprites, );
+
+// The provided mixins are intended to be used with the array-like variables
+//
+// .icon-home {
+//   @include sprite-width($icon-home);
+// }
+//
+// .icon-email {
+//   @include sprite($icon-email);
+// }
+//
+// Example usage in HTML:
+//
+// `display: block` sprite:
+// <div class="icon-home"></div>
+//
+// To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+//
+// // CSS
+// .icon {
+//   display: inline-block;
+// }
+//
+// // HTML
+// <i class="icon icon-home"></i>
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+// The `sprites` mixin generates identical output to the CSS template
+//   but can be overridden inside of SCSS
+//
+// @include sprites($spritesheet-sprites);
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}

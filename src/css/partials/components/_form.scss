@@ -1,0 +1,85 @@
+.form{
+  &__title{
+    text-align: center;
+    margin: 0;
+    padding: 20px 0 20px;
+    color: $text-black;
+    @include font-family('Proxima Nova Light', normal, normal);
+    font-size: $font-size-title;
+  }
+}
+
+
+
+.mcc-form{
+  // text-align: center;  
+  // position: relative;
+  // padding-top: 20px;
+  // padding-bottom: 20px;
+
+  // form{
+  //   display: flex;
+  //   flex-wrap: wrap;
+  // }
+  // &__title{
+  //   flex: 0 0 100%;
+  //   text-align: center;
+  //   color: $text-color-white;
+  //   @include font-family('Proxima Nova Regular', normal, normal);
+  // }
+  // &__text{
+  //   color: $text-color-white;
+  //   text-align: left;
+  //   padding-bottom: 15px;
+  //   margin: 0;
+  // }
+  input[type="text"]{
+    border-radius: 3px;
+    color: $text-white;
+    background-color: transparent;
+    padding: 10px 10px;    
+  //   width: 100%;
+    border: 1px solid $white;
+  //   outline: none;
+  //   margin-bottom: 20px;
+    &::-webkit-input-placeholder{
+      color: $text-white;         
+    }       
+    &::placeholder{
+      color: $text-white;         
+    }
+    &:focus::-webkit-input-placeholder{
+      color: transparent;         
+    }       
+    &:focus::placeholder{
+      color: transparent;         
+    } 
+  }
+  textarea{
+    border-radius: 3px;
+    vertical-align: top;
+    color: $text-white;
+    background-color: transparent;
+    padding: 10px 10px;    
+    // width: 100%;
+    border: 1px solid $white;
+  //   height: 75px;
+  //   outline: none;
+  //   margin-bottom: 20px;
+    &::-webkit-input-placeholder{
+      color: $text-white;         
+    }       
+    &::placeholder{
+      color: $text-white;         
+    }
+    &:focus::-webkit-input-placeholder{
+      color: transparent;         
+    }       
+    &:focus::placeholder{
+      color: transparent;         
+    } 
+  } 
+}
+
+
+

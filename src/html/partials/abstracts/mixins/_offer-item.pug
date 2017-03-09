@@ -1,0 +1,21 @@
+mixin offerItem(title, img, link, start, payback, profit)
+
+  +b.ARTICLE.offer-item
+    //- +e.A.link(href='single-business.html')
+    +e.A.link(href=link)
+      +e.DIV.img
+        img(src='img/offers/'+img+'.jpg', alt=title, title=title)
+      +e.DIV.text          
+        +e.H3.title #{title}
+        +e.description бизнес-план для собственного дела
+      +e.DIV.details
+        +b.offer-detail
+          +e.figures #{start}
+          +e.text Стартовый капитал 
+        +b.offer-detail
+          +e.figures #{payback}
+          +e.text Окупаемость 
+        +b.offer-detail
+          +e.figures #{profit}
+          +e.text Прибыль в месяц       
+

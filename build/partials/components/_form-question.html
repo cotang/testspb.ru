@@ -1,0 +1,88 @@
+<section class="form-question">
+  <div class="container">
+    <div class="form-question__inner">
+      <div class="form-question__img">
+        <img src="img/manager.png" alt="Elena" title="Elena" />
+      </div>
+      <div class="form-manager" itemscope="itemscope" itemtype="http://schema.org/Person">
+        <h2 class="form-manager__title">Задайте вопрос нашему специалисту</h2>
+        <div class="form-manager__info">
+          <span class="form-manager__name" itemprop="name">Ирина Владимировна</span>
+          <a class="form-manager__skype" href="skype:skype01">irina-irina</a>
+          <a class="form-manager__email" href="mailto:irina.manager@gortest.ru" target="_blank" itemprop="email">irina@testspb.ru</a>
+        </div>
+        <!-- MCC form question-->
+        <form class="mcc-form mcc-form-question mcc-form-only-form" id="mccqform" action="" method="post">
+          <table>
+            <tbody>
+              <tr>
+                <td class="mcc-label mcc-label-name">
+                  <div>Ваше имя:
+                    <span class="mcc-required">*</span>
+                  </div>
+                </td>
+                <td class="mcc-value mcc-value-name">
+                  <input class="mcc-text mcc-form-input" id="mcc_question_name" name="mcc_question_name" maxlength="255" value="" size="27" type="text" />
+                </td>
+              </tr>
+              <tr>
+                <td class="mcc-label mcc-label-phone">
+                  <div>Контактный телефон:</div>
+                </td>
+                <td class="mcc-value mcc-value-phone">
+                  <input class="mcc-text mcc-form-input" id="mcc_question_phone" name="mcc_question_phone" maxlength="30" value="" size="27" type="text" />
+                </td>
+              </tr>
+              <tr>
+                <td class="mcc-label mcc-label-email">
+                  <div>Контактный e-mail:
+                    <span class="mcc-required">*</span>
+                  </div>
+                </td>
+                <td class="mcc-value mcc-value-email">
+                  <input class="mcc-text mcc-form-input" id="mcc_question_email" name="mcc_question_email" maxlength="255" value="" size="27" type="text" />
+                </td>
+              </tr>
+              <tr>
+                <td class="mcc-label mcc-label-question">
+                  <div>Ваш вопрос:
+                    <span class="mcc-required">*</span>
+                  </div>
+                </td>
+                <td class="mcc-value mcc-value-question">
+                  <textarea class="mcc-text mcc-form-textarea" id="mcc_question_question" name="mcc_question_question" cols="50" rows="10"></textarea>
+                </td>
+              </tr>
+              <tr>
+                <td class="mcc-label mcc-label-captchacode" style="display: none;"></td>
+                <td class="mcc-captcha mcc-value-captcha">
+                  <div>
+                    <div class="mcc_captcha_block" id="mcc_captcha_block">
+                      <div class="recaptcha" id="recaptcha1">
+                        <div style="width: 304px; height: 78px;">
+                          <div>
+                            <iframe src="https://www.google.com/recaptcha/api2/anchor?k=6LeAaiYTAAAAADEv2Lz3Mb--6fmLFt97M9JIJ0xX&amp;co=aHR0cDovL3Rlc3RzcGIucnU6ODA.&amp;hl=ru&amp;v=r20170228102020&amp;size=normal&amp;cb=lwn8143gk7gg" title="виджет reCAPTCHA"
+                              width="304" height="78" frameborder="0" scrolling="no" name="undefined"></iframe>
+                          </div>
+                          <textarea class="g-recaptcha-response" id="g-recaptcha-response" name="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid #c1c1c1; margin: 10px 25px; padding: 0px; resize: none;  display: none; ;"></textarea>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mcc_captcha_reload" onclick="mcc_question_and_answer_form_captcha_reload( this, 'MCC_Captcha_Question0' )" title="Обновить картинку"></div>
+                  </div>
+                  <div class="mcc_captcha_block_after"></div>
+                </td>
+              </tr>
+              <tr>
+                <td class="mcc-label" style="display: none;"></td>
+                <td>
+                  <input class="mcc-submit" name="mcc_submit" value="Спросить" type="submit" />
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

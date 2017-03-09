@@ -1,0 +1,122 @@
+.reviews-section{
+  padding-bottom: 60px;
+  &__title{
+    margin: 0;
+    padding: 60px 0 20px;
+    @include font-family('Proxima Nova Light', normal, normal);
+    font-size: $font-size-title;
+    color: $text-black;
+  }
+  &__gallery{
+    margin: -5px;
+    position: relative;
+    .slick-dots{
+      position: absolute;
+      top: 100%;
+      right: 0;
+      padding-left: 0;
+      list-style-type: none;
+      margin: 20px 10px;
+      li{
+        display: inline-block;
+        margin: 0 5px;
+        button{
+          display: block;
+          width: 12px;
+          height: 12px;
+          color: transparent;
+          background-color: $grey-bg;
+          border: none;
+          outline: none;
+          border-radius: 50%;
+        }
+      }
+      li.slick-active{
+        button{
+          background-color: $orange;
+        }
+      }
+    }
+  }
+  &__link{
+    display: block;
+    margin: 20px 0;
+    text-decoration: underline;
+  }
+}
+
+
+.reviews-item{
+  &__wrapper{
+    box-shadow: 0px 1px 7px 0px rgba(30, 30, 30, 0.27);
+    border-radius: 3px;
+    margin: 5px;
+  }
+  &__name{
+    margin: 0;
+    padding: 20px;
+    @include font-family('Proxima Nova Bold', normal, normal);
+    font-size: $font-size-small;
+    color: $text-black;
+  }
+  &__text{
+    line-height: (24/14);
+    font-size: $font-size-small;
+    background-color: $grey-bg;
+    padding: 30px 40px;
+    position: relative;
+    &:before, &:after{
+      content: '"';
+      // font-family: 'Times New Roman', Georgia, serif;
+      // font-style: italic;
+      position: absolute;
+      color: $text-blue;
+      font-size: 40px;
+    }
+    &:before{
+      top: 10px;
+      left: 20px;
+    }
+    &:after{
+      bottom: 10px;
+      right: 20px;
+    }
+
+    p{
+      margin: 0;
+    }
+  }
+  &__link{
+    text-decoration: underline;
+    display: block;
+    margin: 20px 0;
+  }
+}
+
+
+.reviews{
+  padding-bottom: 80px;
+  &__title{
+    text-align: center; 
+    margin: 0;
+    padding: 80px 0 20px;
+    @include font-family('Proxima Nova Light', normal, normal);
+    font-size: $font-size-title;
+    color: $text-black;
+  }
+  &__block{
+    display: none;
+    margin-bottom: 40px;
+    &:nth-of-type(1), 
+    &:nth-of-type(2), 
+    &:nth-of-type(3){
+      display: block;
+    }
+  }
+  &__link{
+    display: block;
+    padding-top: 20px;
+    text-align: center;
+    text-decoration: underline;
+  }
+}

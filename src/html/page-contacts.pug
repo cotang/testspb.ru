@@ -1,0 +1,52 @@
+extends partials/templates/_template.pug
+
+block content
+  +b.SECTION.page--contacts
+
+    // Breadcrumbs
+    +b.SECTION.breadcrumbs
+      .container
+        +e.inner
+          span Контакты
+
+    // Contacts
+    +b.SECTION.contacts
+      //- +e.H1.title 
+      //-   .container Контакты
+      +e.offices
+        .container
+          .row
+            - for (var i = 0; i< 3; i++){
+              .col-xs-12.col-lg-4
+                +b.office(itemscope, itemtype="http://schema.org/ContactPoint")
+                  +e.H3.title Санкт-Петербург
+                  +e.info 
+                    +e.address 
+                      p Станция метро: "Балтийская"
+                      p Митрофаньевское шоссе, д. 2, офис 217/2
+                    +e.email-wrapper 
+                      a(href="info@testspb.ru", target="_blank", itemprop="email") E-mail: info@testspb.ru
+                    +e.tel-wrapper
+                      a(href="tel:+7(812)441-37-92", target="_blank", itemprop="telephone") Тел/факс: +7 (812) 441-37-92
+                      a(href="tel:+7(812)921-60-01", target="_blank", itemprop="telephone") Телефон: +7 (812) 921-60-01
+                    +e.time с 9:30 до 18:00 по местному времени
+                    +e.map         
+                      a(href="#", data-lat='', data-lng='') на карте
+            - }
+      +e.map
+
+    // Form question
+    include partials/components/_form-question.pug
+    // News section
+    include partials/components/_news-section.pug    
+    // Form cert
+    include partials/components/_form-cert.pug
+    // Clients + reviews
+    include partials/components/_clients-reviews.pug
+    // Map
+    include partials/components/_map.pug
+
+
+
+
+

@@ -1,0 +1,65 @@
+.nav{
+  @include mq($from:xs, $until:lg){
+    display: none;
+  }
+  &__list{   
+    @include font-family('Proxima Nova Light', normal, normal); 
+    text-transform: uppercase;
+    padding: 0 30px;
+    margin: 0;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    @include mq($from:xs, $until:lg){
+      flex-wrap: wrap;
+      margin: 0;
+      padding: 0 0 10px;
+    }
+  }
+  &__item{
+    @include mq($from:xs, $until:lg){
+      flex: 0 0 100%;
+    }
+  }
+
+  &__link{
+    color: $grey;
+    display: inline-block;
+    padding: 0 10px;
+    &:hover, &:focus {
+      color: $blue;
+      text-decoration: none;
+    }
+  }
+}
+
+
+
+.hamburger{
+  display: inline-block;
+  padding: 17px 6px;
+  border-radius: 3px;
+  span{
+    display: block;
+    width: 30px;
+    margin: 0 auto;
+    height: 4px;
+    background-color: $grey;
+
+    &:after, &:before{
+      content: "";
+      display: block;
+      width: 30px;
+      height: 4px;
+      background-color: $grey;
+    }
+    &:before{
+      transform: translateY(-10px);
+    }    
+    &:after{
+      transform: translateY(6px);
+    }    
+  }
+}

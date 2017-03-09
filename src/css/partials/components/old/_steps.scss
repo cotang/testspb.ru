@@ -1,0 +1,77 @@
+.steps{
+  border: 1px dashed $grey-border;
+  @include mq($from:xs, $until:lg){
+    margin-bottom: 30px;
+  }
+
+  &__item{
+    margin-top: 30px;
+    margin-bottom: 55px;
+    padding-left: 80px;
+    position: relative;
+    &:nth-of-type(1){
+      .steps__icon{
+        @include sprite($s-step1);
+      }
+    }
+    &:nth-of-type(2){
+      .steps__icon{
+        @include sprite($s-step2);
+      }
+    }
+    &:nth-of-type(3){
+      .steps__icon{
+        @include sprite($s-step3);
+      }
+    }
+  }
+  &__index{
+    color: $text-black;
+  }  
+  &__icon{
+    position: absolute;
+    top: 0.3em;
+    left: 0.8em;
+  }  
+  &__text{
+    a{
+      color: $red;
+      &:hover, &:focus {
+        color: $red;
+      }
+    }
+  }
+  &__btn{
+    margin: -15px 20px 20px;
+  }
+
+  &--wide{
+    padding-right: 10px;
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    .steps__item{
+      flex: 0 0 33.3333%;
+      text-align: left;
+      padding-left: 140px;
+      margin-bottom: 30px;
+      @include mq($from:xs, $until:lg){
+        padding-left: 100px;
+      }
+      @include mq($from:xs, $until:md){
+        flex: 0 0 100%;
+      }
+    }
+    .steps__icon{
+      left: 50px;
+      @include mq($from:xs, $until:lg){
+        left: 30px;
+      }
+    }  
+    .steps__btn{
+      margin-top: 0;
+      margin-bottom: 35px;
+      flex: 0 0 100%;
+    }
+  }
+}

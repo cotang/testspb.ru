@@ -1,0 +1,61 @@
+.questions-controls{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 20px 0;
+  font-size: $font-size-big;
+
+  &__sort{
+    margin-right: 20px;
+    position: relative;
+    padding: 5px 0;
+    @include mq($from:xs, $until:lg){
+      padding: 10px 0;
+    }
+  }
+  &__sort-link{
+    color: $red;
+    position: relative;
+    &:after{
+      content: '';
+      display: inline-block;
+      margin-left: 10px;
+      @include sprite($s-next-red);
+    }
+    &--active{
+      &:after{
+        @include sprite($s-down-red);
+      }      
+    }
+  }
+  &__filter{
+
+  }
+  &__filter-link{
+    color: $red;
+  }
+}
+
+
+
+.sort{
+  display: none;
+  position: absolute;
+  z-index: 1;
+  top: 100%;
+  left: 50%;
+  border: 1px solid $grey-border;
+  background-color: $white;
+  padding-left: 0;
+  margin: 0;
+  list-style-type: none;
+  padding: 5px 0;
+  &__item{
+    padding: 0 10px;
+  }
+  &__link{
+    padding: 5px 0;
+    color: $red;
+    white-space: nowrap;
+  }
+}

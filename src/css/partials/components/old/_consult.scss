@@ -1,0 +1,98 @@
+.consult{
+  text-align: left;
+  // margin-top: 150px;
+  // @include mq($from:xs, $until:lg){
+  //   margin-top: 50px;
+  // }
+  
+  &__title{
+    font-size: $font-size-title;
+    @include font-family('Proxima Nova Light', normal, normal);
+    color: $text-black;
+    margin: 0 0 15px;
+    &:before{
+      content: '';
+      display: inline-block;
+      margin-right: 15px;
+      width: 4px;
+      height: 25px;
+      background-color: $red;
+    }
+  }
+}
+.staff{
+  margin-top: 20px;
+  &:nth-of-type(1){
+    .staff__icon{
+      @include sprite($s-staff1);
+    }
+  }
+  &:nth-of-type(2){
+    .staff__icon{
+      @include sprite($s-staff2);
+    }
+  }
+  &:nth-of-type(3){
+    .staff__icon{
+      @include sprite($s-staff3);
+    }
+  }
+  &__description{
+    margin-left: 20px;
+    margin-top: 25px;
+  }
+  &__icon{
+    display: inline-block;
+    margin-bottom: 10px;
+  }  
+  &__position{
+    display: block;
+    // color: $text-black;
+    @include font-family('Proxima Nova Bold', normal, normal);
+    margin-bottom: 5px;
+  }
+
+  &__gallery{
+    margin-top: 25px;
+  }    
+  &__person{
+    text-align: center;
+  }
+  &__img{
+    margin: 0 10px 10px;
+    img{
+      margin: 0 auto;
+      border-radius: 50%;
+    }
+  }
+  &__name{
+    padding: 0 10px;
+    @include font-family('Proxima Nova Light', normal, normal);
+    margin: 0;
+    font-size: $font-size-small;
+  }
+  .slick-dots{
+    text-align: right;
+    padding-left: 0;
+    margin: 20px 0 0;
+    li{
+      display: inline-block;
+      margin-left: 5px;
+    }
+    .slick-active{
+      button{
+        background-color: $pink;
+      }      
+    }
+    button{
+      padding: 0;
+      background-color: $grey-dot;
+      color: transparent;
+      border: none;
+      outline: none;
+      border-radius: 50%;
+      width: 10px;
+      height: 10px;
+    }
+  }
+}

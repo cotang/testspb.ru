@@ -1,0 +1,106 @@
+.complex-offered-services{
+  background-color: $pale;
+  margin-top: 20px;
+  &__title{
+    position: relative;
+    font-size: $font-size-big;
+    @include font-family('Proxima Nova Regular', normal, normal);
+    color: $text-black;
+    margin: 0 0 20px 20px;
+    padding-left: 15px;
+    &:before{
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: inline-block;
+      width: 4px;
+      height: 25px;
+      background-color: $blue;
+    }
+  }
+  &__list{
+    padding-left: 0;
+    margin: 0 0 0 20px;
+    list-style-type: none;
+  }
+
+  &__total{
+    margin-top: 10px;
+    margin-left: 20px;
+  }
+  &__total-money{
+    color: $red;
+    font-size: $font-size-big;
+  }
+  &__form{
+    margin-top: 10px;
+  }
+}
+
+.offered-services-type{
+  margin-top: 10px;
+  &__input{
+    display: none;
+    &:checked{
+      ~ .offered-services-type__block-title .offered-services-type__icon{
+        background-color: $blue;
+        border: 1px solid $blue;
+      }
+      ~ .offered-services-type__block-title .offered-services-type__icon:before{
+        display: inline-block;
+      }
+      ~ .offered-services-type__block-title .offered-services-type__link{
+        color: $text-black;
+      }
+      ~ .offered-services-type__list .offered-services-type__link{
+        color: $text-black;
+      }
+    }
+  }
+  &__block-title{
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  &__label{
+    // display: flex;
+    // align-items: center;
+    // width: 100%;
+    &:hover, &:focus, &:active{
+      cursor: pointer;
+    } 
+  }
+  &__icon{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    position: relative;
+    border: 1px solid $grey-border;
+    &:before{
+      content: '';      
+      position: absolute;
+      z-index: 1;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: none;
+      @include sprite($s-check); 
+    }
+  }
+  &__title{
+    display: inline-block;
+    margin: 0;
+    font-size: $font-size-big;
+    color: $text-black;
+    @include font-family('Proxima Nova Regular', normal, normal);
+  }
+  &__list{
+    list-style-type: none;
+  }
+  &__link{
+    transition: none;
+    color: $text-color;
+  }
+}
