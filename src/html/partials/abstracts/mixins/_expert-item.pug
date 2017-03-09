@@ -1,6 +1,0 @@
-mixin expertItem(name, img)
-
-  +e.person(itemscope, itemtype="http://schema.org/Person")
-    +e.img
-      img(src="img/managers/"+img+".jpg", alt= name, title= name, itemprop="image")
-    +e.H3.name(itemprop="name") #{name}
