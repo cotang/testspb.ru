@@ -1,0 +1,1430 @@
+<!DOCTYPE html>
+<html lang="ru" prefix="og: http://ogp.me/ns#">
+  <!-- Head-->
+  <head>
+    <title>testspb.ru</title>
+    <!-- Main Meta information-->
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0">
+    <meta name="keywords" content="">
+    <meta name="description" content="testspb.ru">
+    <meta name="author" content="">
+    <!-- Meta Information-->
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Russian">
+    <meta name="msapplication-tooltip" content="testspb.ru">
+    <meta name="msapplication-starturl" content="http://testspb.ru">
+    <meta name="msapplication-tap-highlight" content="no">
+    <!-- OpenGraph microformat-->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="testspb.ru">
+    <meta property="og:site_name" content="testspb.ru">
+    <meta property="og:url" content="http://testspb.ru">
+    <meta property="og:description" content="testspb.ru">
+    <meta property="og:image" content="">
+    <!-- Twitter microformat-->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="http://testspb.ru">
+    <meta name="twitter:creator" content="">
+    <meta name="twitter:url" content="">
+    <meta name="twitter:title" content="testspb.ru">
+    <meta name="twitter:description" content="testspb.ru">
+    <meta name="twitter:image" content="">
+    <meta name="twitter:domain" content="http://testspb.ru">
+    <link rel="canonical" href="/">
+    <link rel="image_src" href="#">
+    <link rel="shortlink" href="#">
+    <link type="text/plain" rel="author" href="humans.txt">
+    <link rel="stylesheet" href="css/style.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://maps.google.com/maps/api/js?key=AIzaSyCbFBllrMkXPOoe1YbN3aXTYV0cesewVhc"></script>
+  </head>
+  <body>
+    <!-- Header-->
+    <header class="header">
+      <div class="container">
+        <div class="header__inner">
+          <div class="header__logo">
+            <!-- Logo-->
+            <a class="logo" href="index.html" itemscope="itemscope" itemtype="http://schema.org/Brand">
+              <img src="img/logo.svg" alt="Логотип Тест Петербург" title="Тест Петербург Сертификация" itemprop="logo">
+            </a>
+          </div>
+          <div class="header__nav">
+            <!-- Nav-->
+            <nav class="nav">
+              <ul class="nav__list">
+                <div class="menu-item">
+                  <a href="page-services.html">Услуги</a>
+                </div>
+                <div class="menu-item">
+                  <a href="page-about.html">О компании</a>
+                </div>
+                <div class="menu-item">
+                  <a href="page-faq.html">Faq</a>
+                </div>
+                <div class="menu-item">
+                  <a href="page-news.html">Новости</a>
+                </div>
+                <div class="menu-item">
+                  <a href="page-contacts.html">Контакты</a>
+                </div>
+              </ul>
+              <div class="nav__hamburger">
+                <a class="hamburger" href="#">
+                  <span></span>
+                </a>
+              </div>
+            </nav>
+          </div>
+          <div class="header__btn">
+            <a class="btn" href="#" data-form="application">Узнать стоимость</a>
+          </div>
+          <div class="header__contacts">
+            <div class="header-contacts" itemscope itemtype="http://schema.org/ContactPoint">
+              <div class="header-contacts__tel-wrapper">
+                <a class="header-contacts__tel" href="tel:+78124413792" target="_blank" itemprop="telephone">+7 (812) 441-37-92</a>
+                <a class="header-contacts__tel" href="tel:+78129216001" target="_blank" itemprop="telephone">+7 (812) 921-60-01</a>
+              </div>
+              <div class="header-contacts__email-wrapper">
+                <a class="header-contacts__email" href="mailto:info@testspb.ru" target="_blank" itemprop="email">info@testspb.ru</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="page page--reviews">
+        <!-- Breadcrumbs-->
+        <section class="breadcrumbs">
+          <div class="container">
+            <div class="breadcrumbs__inner">
+              <span>Отзывы</span>
+            </div>
+          </div>
+        </section>
+        <!-- Reviews-->
+        <section class="reviews">
+          <div class="container">
+            <div class="reviews__content">
+              <h2 class="reviews__title">Оставьте свой отзыв</h2>
+              <script type="text/javascript">
+                function mcc_Comments_Api(get)
+                {
+                  if (get == "FormFieldReqiured")
+                  {
+                    return {
+                      "Company":
+                      {
+                        "id": "mcc_comments_company",
+                        "error_empty": "Укажите Вашу компанию"
+                      },
+                      "Comment":
+                      {
+                        "id": "mcc_comments_comment",
+                        "error_empty": "Укажите Ваш отзыв"
+                      },
+                      "Email":
+                      {
+                        "id": "mcc_comments_email",
+                        "error_empty": "Укажите Ваш контактный e-mail"
+                      }
+                    };
+                  }
+                  else if (get == "FormFieldCorrect")
+                  {
+                    return {
+                      "Email":
+                      {
+                        "id": "mcc_comments_email",
+                        "error_text": "Такой почты не существует",
+                        "type": "regular",
+                        "regular": /^([a-zA-Z0-9_-]+\\.)*[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)*\.[a-zA-Z]{2,4}$/
+                      },
+                      "Captcha":
+                      {
+                        "id": "mcc_comments_captcha",
+                        "error_text": "Нажмите на кнопку Я не робот",
+                        "type": "captcha",
+                        "server": "http://testspb.ru/captcha",
+                        "server_param":
+                        {
+                          "mode": "Captcha",
+                          "check": 1
+                        },
+                        "server_tpl":
+                        {
+                          "mode": "Captcha",
+                          "viev": 1,
+                          "captcha_id": "captcha_img"
+                        }
+                      }
+                    };
+                  }
+                  else if (get == "FileExt")
+                  {
+                    return ["jpg", "jpeg", "png", "gif", "doc", "docx", "odf", "xls", "xlsx", "ods", "pdf", "txt"];
+                  }
+                  else if (get == "FileExtError")
+                  {
+                    return "Допускаются только Word, Excel, PDF - файлы и изображения";
+                  }
+                  else if (get == "FormFieldOptional")
+                  {
+                    return {
+                      "Phone":
+                      {
+                        "id": "mcc_comments_phone",
+                        "error_text": "Укажите Ваш контактный телефон правильно",
+                        "type": "regular",
+                        "regular": /^[0-9\\-\+\(\)\ ]+$/
+                      }
+                    };
+                  }
+                }
+
+                function mcc_CommentsSubmit(form)
+                {
+                  var prefiks = '#' + form.id + ' ';
+                  //-----Проверка обязательных полей
+                  var req = mcc_Comments_Api('FormFieldReqiured');
+                  for (key in req)
+                  {
+                    if (!jQuery(prefiks + "#" + req[key]['id']).val())
+                    {
+                      mcc_CommentsError(req[key]['id'], req[key]['error_empty'], prefiks);
+                      return false;
+                    }
+                  }
+                  //-----Проверка корректности ввода
+                  req = mcc_Comments_Api('FormFieldCorrect');
+                  for (key in req)
+                  {
+                    if (req[key]['type'] == 'regular')
+                    {
+                      var r = new RegExp(req[key]['regular']);
+                      if (!r.test(jQuery(prefiks + '#' + req[key]['id']).val()))
+                      {
+                        mcc_CommentsError(req[key]['id'], req[key]['error_text'], prefiks);
+                        return false;
+                      }
+                    }
+                    else if (req[key]['type'] == 'captcha')
+                    {
+                      /*
+                      req[key]['server_param']['word']= jQuery( prefiks + '#'+req[key]['id'] ).val();
+                      var ret = '0';
+                      jQuery.ajax(
+                      {
+                      url:req[key]['server'],
+                      data:req[key]['server_param'],
+                      cache:false,
+                      async:false,
+                      success:function(data)
+                      {
+                      ret = data;
+                      }
+                      });
+                      if( ret=='0' )
+                      {
+                      jQuery.ajax(
+                      {
+                      url:req[key]['server'],
+                      data:req[key]['server_tpl'],
+                      cache:false,
+                      async:false,
+                      success:function(data)
+                      {
+                      jQuery( prefiks + '#'+req[key]['server_tpl']['captcha_id']).parent().html( data );
+                      }
+                      });
+                      mcc_CommentsError( req[key]['id'], req[key]['error_text'], prefiks );
+                      return false;
+                      } */
+                    }
+                  }
+                  //-----Проверяем правильное ли рассширение у файла
+                  var file_val = jQuery(prefiks + "#mcc_comments_file_upload").val();
+                  if (file_val)
+                  {
+                    var file_exts = mcc_Comments_Api("FileExt");
+                    var file_ext = file_val.split('.');
+                    file_ext = file_ext[file_ext.length - 1];
+                    file_ext = file_ext.toLowerCase();
+                    if (jQuery.inArray(file_ext, file_exts) == -1)
+                    {
+                      mcc_CommentsError("mcc_comments_file_upload", mcc_Comments_Api("FileExtError"), prefiks);
+                      return false;
+                    }
+                  }
+                  //-----Проверяем необязательные поля
+                  req = mcc_Comments_Api('FormFieldOptional');
+                  for (key in req)
+                  {
+                    if (jQuery(prefiks + '#' + req[key]['id']).val())
+                    {
+                      if (req[key]['type'] == 'regular')
+                      {
+                        r = new RegExp(req[key]['regular']);
+                        if (!r.test(jQuery(prefiks + '#' + req[key]['id']).val()))
+                        {
+                          mcc_CommentsError(req[key]['id'], req[key]['error_text'], prefiks);
+                          return false;
+                        }
+                      }
+                    }
+                  }
+                  return true;
+                }
+                window.mcc_error_counter = 0;
+                /**
+                 *
+                 * @param id string
+                 * @param text string
+                 * @param text prefiks
+                 * @return void
+                 */
+                function mcc_CommentsError(id, text, prefiks)
+                {
+                  window.mcc_error_counter++;
+                  jQuery(prefiks + "#" + id).parent().append("<div class='mcc_error' id='mcc_error" + window.mcc_error_counter + "' style='display:none;'>" + text + "</div>");
+                  jQuery(prefiks + "#" + id).focus();
+                  var border = jQuery(prefiks + "#" + id).css('border');
+                  jQuery(prefiks + "#" + id).css('border', '2px solid red');
+                  jQuery(prefiks + "#mcc_error" + window.mcc_error_counter).slideDown('slow', function()
+                  {
+                    setTimeout(function()
+                    {
+                      jQuery(prefiks + "#mcc_error" + window.mcc_error_counter).slideUp('slow', function()
+                      {
+                        jQuery(".mcc_error").remove();
+                        jQuery(prefiks + "#" + id).css('border', border);
+                      });
+                    }, 2000);
+                  });
+                }
+              </script>
+              <form class="mcc-form" id="mcccform0" method="post" action="" enctype="multipart/form-data">
+                <table>
+                  <tbody>
+                    <tr>
+                      <td class="mcc-label">
+                        <div>Ваша компания:
+                          <span class="mcc-required">*</span>
+                        </div>
+                      </td>
+                      <td>
+                        <input class="mcc-text" id="mcc_comments_company" name="mcc_comments_company" maxlength="255" value="" type="text">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="mcc-label">
+                        <div>Ваш отзыв:
+                          <span class="mcc-required">*</span>
+                        </div>
+                      </td>
+                      <td>
+                        <textarea class="mcc-text" id="mcc_comments_comment" name="mcc_comments_comment" cols="45" rows="5"></textarea>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="mcc-label">
+                        <div>Контактный e-mail:
+                          <span class="mcc-required">*</span>
+                        </div>
+                      </td>
+                      <td>
+                        <input class="mcc-text" id="mcc_comments_email" name="mcc_comments_email" maxlength="255" value="" type="text">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td>
+                        <div class="recaptcha" id="recaptcha1">
+                          <div style="width: 304px; height: 78px;">
+                            <div>
+                              <iframe src="https://www.google.com/recaptcha/api2/anchor?k=6LeAaiYTAAAAADEv2Lz3Mb--6fmLFt97M9JIJ0xX&amp;co=aHR0cDovL3Rlc3RzcGIucnU6ODA.&amp;hl=ru&amp;v=r20170228102020&amp;size=normal&amp;cb=pfrnyhc7yb61" title="виджет reCAPTCHA"
+                                width="304" height="78" frameborder="0" scrolling="no" name="undefined"></iframe>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td>
+                        <input class="mcc-submit" name="mcc_submit" value="Оставить отзыв" type="submit">
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </form>
+              <div id="mcc_comments_rows_block">
+                <div class="mcc_comments_rowNoImage_block mcc_comments_row_block" id="mcc_comments_rowNoImage_block1957">
+                  <p class="mcc_comments_row_header">
+                    <a href="?mcc_comments_id=1957" title="Подробнее"></a>
+                  </p>
+                  <h2>
+                    <a href="?mcc_comments_id=1957" title="Подробнее"> ООО Пегас</a>
+                  </h2>
+                  <a href="?mcc_comments_id=1957" title="Подробнее"></a>
+                  <p></p>
+                  <p class="mcc_comments_row_company">
+                    <span class="mcc_comments_row_company_title">Компания: </span>
+                    <span class="mcc_comments_row_company_value">ООО Пегас</span>
+                  </p>
+                  <p class="mcc_comments_row_comment">
+                    <span class="mcc_comments_row_comment_title">Комментарий: </span>
+                    <span class="mcc_comments_row_company_value">Выполненная работа на высшем уровне! Быстро и качественно. Спасибо! Надеемся на дальнейшее сотрудничество.</span>
+                  </p>
+                  <p class="mcc_comments_row_comment">
+                    <span class="mcc_comments_row_comment_title">Ответ: </span>
+                    <span class="mcc_comments_row_comment_title"></span>
+                  </p>
+                </div>
+                <div class="mcc_comments_rowNoImage_block mcc_comments_row_block" id="mcc_comments_rowNoImage_block1861">
+                  <p class="mcc_comments_row_header">
+                    <a href="?mcc_comments_id=1861" title="Подробнее"></a>
+                  </p>
+                  <h2>
+                    <a href="?mcc_comments_id=1861" title="Подробнее"> ООО "Биомедиа"</a>
+                  </h2>
+                  <a href="?mcc_comments_id=1861" title="Подробнее"></a>
+                  <p></p>
+                  <p class="mcc_comments_row_company">
+                    <span class="mcc_comments_row_company_title">Компания: </span>
+                    <span class="mcc_comments_row_company_value">ООО "Биомедиа"</span>
+                  </p>
+                  <p class="mcc_comments_row_comment">
+                    <span class="mcc_comments_row_comment_title">Комментарий: </span>
+                    <span class="mcc_comments_row_company_value">Мы оформляли отказное письмо на нашу продукцию. Все познается в сравнении. До этого мы обратились в компанию, с которой переписывались 2 недели (нашли в топе поисковика). В течение всего периода специалист уточнял у других специалистов,
+                      нужно ли все-таки декларировать или...</span>
+                  </p>
+                  <p class="mcc_comments_row_comment">
+                    <span class="mcc_comments_row_comment_title">Ответ: </span>
+                    <span class="mcc_comments_row_comment_title"></span>
+                  </p>
+                </div>
+                <div class="mcc_comments_rowNoImage_block mcc_comments_row_block" id="mcc_comments_rowNoImage_block867">
+                  <p class="mcc_comments_row_header">
+                    <a href="?mcc_comments_id=867" title="Подробнее"></a>
+                  </p>
+                  <h2>
+                    <a href="?mcc_comments_id=867" title="Подробнее"> </a>
+                  </h2>
+                  <a href="?mcc_comments_id=867" title="Подробнее"></a>
+                  <p></p>
+                  <p class="mcc_comments_row_company">
+                    <span class="mcc_comments_row_company_title">Компания: </span>
+                    <span class="mcc_comments_row_company_value">МакГрегор</span>
+                  </p>
+                  <p class="mcc_comments_row_comment">
+                    <span class="mcc_comments_row_comment_title">Комментарий: </span>
+                    <span class="mcc_comments_row_company_value">Уважаемая Ксения Александровна! Благодарю Вас за предварительную консультацию по вопросам сертификации и действующих правил Таможенного Союза. Неожиданно приятно, что профессиональное решение могут подсказать попутчики в транспорте,
+                      в своё нерабочее время. Остаётся выразить огромное уважение Вам и Вашему руководству за таких...</span>
+                  </p>
+                  <p class="mcc_comments_row_comment">
+                    <span class="mcc_comments_row_comment_title">Ответ: </span>
+                    <span class="mcc_comments_row_comment_title"></span>
+                  </p>
+                </div>
+                <div class="mcc_comments_rowNoImage_block mcc_comments_row_block" id="mcc_comments_rowNoImage_block837">
+                  <p class="mcc_comments_row_header">
+                    <a href="?mcc_comments_id=837" title="Подробнее"></a>
+                  </p>
+                  <h2>
+                    <a href="?mcc_comments_id=837" title="Подробнее">Спасибо вам!</a>
+                  </h2>
+                  <a href="?mcc_comments_id=837" title="Подробнее"></a>
+                  <p></p>
+                  <p class="mcc_comments_row_company">
+                    <span class="mcc_comments_row_company_title">Компания: </span>
+                    <span class="mcc_comments_row_company_value">ООО "Альфа Судовые Средства"</span>
+                  </p>
+                  <p class="mcc_comments_row_comment">
+                    <span class="mcc_comments_row_comment_title">Комментарий: </span>
+                    <span class="mcc_comments_row_company_value">Наша компания, начиная с 2013 года, многократно обращалась к "Тест--Петербург" для оформления Технических условий и Инструкций по эксплуатации спасательного оборудования, Деклараций о соответствии Таможенного союза, сертификатов системы
+                      ГОСТ-Р или отказных писем. Всякий раз документы оформлялись оперативно, профессионально, что оказывало большую помощь...</span>
+                  </p>
+                  <p class="mcc_comments_row_comment">
+                    <span class="mcc_comments_row_comment_title">Ответ: </span>
+                    <span class="mcc_comments_row_comment_title"></span>
+                  </p>
+                </div>
+                <div class="mcc_comments_rowNoImage_block mcc_comments_row_block" id="mcc_comments_rowNoImage_block786">
+                  <p class="mcc_comments_row_header">
+                    <a href="?mcc_comments_id=786" title="Подробнее"></a>
+                  </p>
+                  <h2>
+                    <a href="?mcc_comments_id=786" title="Подробнее">Большое спасибо</a>
+                  </h2>
+                  <a href="?mcc_comments_id=786" title="Подробнее"></a>
+                  <p></p>
+                  <p class="mcc_comments_row_company">
+                    <span class="mcc_comments_row_company_title">Компания: </span>
+                    <span class="mcc_comments_row_company_value">ИП Голубева</span>
+                  </p>
+                  <p class="mcc_comments_row_comment">
+                    <span class="mcc_comments_row_comment_title">Комментарий: </span>
+                    <span class="mcc_comments_row_company_value">Оформляли декларации о соответствии. Наша заявка была обработана Алёной на 5+, большое ей спасибо. В дальнейшем буду обращаться только к Вам!</span>
+                  </p>
+                  <p class="mcc_comments_row_comment">
+                    <span class="mcc_comments_row_comment_title">Ответ: </span>
+                    <span class="mcc_comments_row_comment_title"></span>
+                  </p>
+                </div>
+                <div class="mcc_comments_rowNoImage_block mcc_comments_row_block" id="mcc_comments_rowNoImage_block784">
+                  <p class="mcc_comments_row_header">
+                    <a href="?mcc_comments_id=784" title="Подробнее"></a>
+                  </p>
+                  <h2>
+                    <a href="?mcc_comments_id=784" title="Подробнее">РЕКОМЕНДУЮ </a>
+                  </h2>
+                  <a href="?mcc_comments_id=784" title="Подробнее"></a>
+                  <p></p>
+                  <p class="mcc_comments_row_company">
+                    <span class="mcc_comments_row_company_title">Компания: </span>
+                    <span class="mcc_comments_row_company_value">ИП Исаков</span>
+                  </p>
+                  <p class="mcc_comments_row_comment">
+                    <span class="mcc_comments_row_comment_title">Комментарий: </span>
+                    <span class="mcc_comments_row_company_value">добрый день. заказывал сертификацию на хлебную продукцию. ОЦЕНКА 5+ РЕКОМЕНДУЮ ВСЕМ кто ценит свое время...</span>
+                  </p>
+                  <p class="mcc_comments_row_comment">
+                    <span class="mcc_comments_row_comment_title">Ответ: </span>
+                    <span class="mcc_comments_row_comment_title"></span>
+                  </p>
+                </div>
+                <div class="mcc_comments_rowNoImage_block mcc_comments_row_block" id="mcc_comments_rowNoImage_block770">
+                  <p class="mcc_comments_row_header">
+                    <a href="?mcc_comments_id=770" title="Подробнее"></a>
+                  </p>
+                  <h2>
+                    <a href="?mcc_comments_id=770" title="Подробнее">ООО "ЦНЭ МурманТест"</a>
+                  </h2>
+                  <a href="?mcc_comments_id=770" title="Подробнее"></a>
+                  <p></p>
+                  <p class="mcc_comments_row_company">
+                    <span class="mcc_comments_row_company_title">Компания: </span>
+                    <span class="mcc_comments_row_company_value">ООО "ЦНЭ МурманТест"</span>
+                  </p>
+                  <p class="mcc_comments_row_comment">
+                    <span class="mcc_comments_row_comment_title">Комментарий: </span>
+                    <span class="mcc_comments_row_company_value">Оформляли СГР. Все сделали очень быстро, раньше срока, не возникло ни каких сложностей.. Заказывали СГР на товары бельевого ассортимента для детей до 3 лет. При необходимости будем обращаться сами и рекомендовать всем заинтересованным
+                      людям. Работали с Еленой Дедуель. Огромное спасибо!!!...</span>
+                  </p>
+                  <p class="mcc_comments_row_comment">
+                    <span class="mcc_comments_row_comment_title">Ответ: </span>
+                    <span class="mcc_comments_row_comment_title"></span>
+                  </p>
+                </div>
+                <div class="mcc_comments_rowNoImage_block mcc_comments_row_block" id="mcc_comments_rowNoImage_block762">
+                  <p class="mcc_comments_row_header">
+                    <a href="?mcc_comments_id=762" title="Подробнее"></a>
+                  </p>
+                  <h2>
+                    <a href="?mcc_comments_id=762" title="Подробнее">ЗАО "Упонор Инфра"</a>
+                  </h2>
+                  <a href="?mcc_comments_id=762" title="Подробнее"></a>
+                  <p></p>
+                  <p class="mcc_comments_row_company">
+                    <span class="mcc_comments_row_company_title">Компания: </span>
+                    <span class="mcc_comments_row_company_value">ЗАО "Упонор Инфра"</span>
+                  </p>
+                  <p class="mcc_comments_row_comment">
+                    <span class="mcc_comments_row_comment_title">Комментарий: </span>
+                    <span class="mcc_comments_row_company_value">Оформляли СГР, как и обещали сделали все быстро и в назначенный срок, не возникло ни каких сложностей по данному вопросу. Заказывали СГР для оформления обязательного сертификата на напорные трубы. Все утроило и ни каких претензий нет.
+                      Обязательно буду рекомендовать Вашу компанию нашим коллегам.</span>
+                  </p>
+                  <p class="mcc_comments_row_comment">
+                    <span class="mcc_comments_row_comment_title">Ответ: </span>
+                    <span class="mcc_comments_row_comment_title"></span>
+                  </p>
+                </div>
+                <div class="mcc_comments_rowNoImage_block mcc_comments_row_block" id="mcc_comments_rowNoImage_block747">
+                  <p class="mcc_comments_row_header">
+                    <a href="?mcc_comments_id=747" title="Подробнее"></a>
+                  </p>
+                  <h2>
+                    <a href="?mcc_comments_id=747" title="Подробнее">Верное решение!</a>
+                  </h2>
+                  <a href="?mcc_comments_id=747" title="Подробнее"></a>
+                  <p></p>
+                  <p class="mcc_comments_row_company">
+                    <span class="mcc_comments_row_company_title">Компания: </span>
+                    <span class="mcc_comments_row_company_value">ООО "ХТМ"</span>
+                  </p>
+                  <p class="mcc_comments_row_comment">
+                    <span class="mcc_comments_row_comment_title">Комментарий: </span>
+                    <span class="mcc_comments_row_company_value">Наша компания сотрудничает с Тест Петербург Сертификация уже несколько лет. За все время работы радует высокий профессионализм и внимательность сотрудников, скорость получения документов, приемлемые цены. (работаем с Зинаидой). По
+                      всем вопросам можно получить грамотную консультацию и принять верное решение.</span>
+                  </p>
+                  <p class="mcc_comments_row_comment">
+                    <span class="mcc_comments_row_comment_title">Ответ: </span>
+                    <span class="mcc_comments_row_comment_title"></span>
+                  </p>
+                </div>
+                <div class="mcc_comments_rowNoImage_block mcc_comments_row_block" id="mcc_comments_rowNoImage_block746">
+                  <p class="mcc_comments_row_header">
+                    <a href="?mcc_comments_id=746" title="Подробнее"></a>
+                  </p>
+                  <h2>
+                    <a href="?mcc_comments_id=746" title="Подробнее">ООО Первый Мурманский Терминал</a>
+                  </h2>
+                  <a href="?mcc_comments_id=746" title="Подробнее"></a>
+                  <p></p>
+                  <p class="mcc_comments_row_company">
+                    <span class="mcc_comments_row_company_title">Компания: </span>
+                    <span class="mcc_comments_row_company_value">ООО Первый Мурманский Терминал</span>
+                  </p>
+                  <p class="mcc_comments_row_comment">
+                    <span class="mcc_comments_row_comment_title">Комментарий: </span>
+                    <span class="mcc_comments_row_company_value">Проводили декларирование топлива (для подтверждения качества топлива, поставляемого на судовую технику), все доступно, просто и оперативно. С поставленной задачей справились на отлично. Понравилась компетентность ваших работников в
+                      данном вопросе, особенно Алены Заревой. При возникновении необходимости, будем обращаться именно в...</span>
+                  </p>
+                  <p class="mcc_comments_row_comment">
+                    <span class="mcc_comments_row_comment_title">Ответ: </span>
+                    <span class="mcc_comments_row_comment_title"></span>
+                  </p>
+                </div>
+                <div class="mcc_comments_rowNoImage_block mcc_comments_row_block" id="mcc_comments_rowNoImage_block728">
+                  <p class="mcc_comments_row_header">
+                    <a href="?mcc_comments_id=728" title="Подробнее"></a>
+                  </p>
+                  <h2>
+                    <a href="?mcc_comments_id=728" title="Подробнее">Благодарю за работу!</a>
+                  </h2>
+                  <a href="?mcc_comments_id=728" title="Подробнее"></a>
+                  <p></p>
+                  <p class="mcc_comments_row_company">
+                    <span class="mcc_comments_row_company_title">Компания: </span>
+                    <span class="mcc_comments_row_company_value">Группа компаний ООО БиоЛайн</span>
+                  </p>
+                  <p class="mcc_comments_row_comment">
+                    <span class="mcc_comments_row_comment_title">Комментарий: </span>
+                    <span class="mcc_comments_row_company_value">Мы уже несколько лет сотрудничаем с центром "Тест Петербург Сертификация". В нашей компании я занимаюсь оформлением сертификаций и деклараций соответствия. Я очень довольна работой нашего менеджера Елены. Документы всегда оформляются
+                      быстро и в срок, без заминок. Елена всегда готова...</span>
+                  </p>
+                  <p class="mcc_comments_row_comment">
+                    <span class="mcc_comments_row_comment_title">Ответ: </span>
+                    <span class="mcc_comments_row_comment_title"></span>
+                  </p>
+                </div>
+                <div class="mcc_comments_rowNoImage_block mcc_comments_row_block" id="mcc_comments_rowNoImage_block727">
+                  <p class="mcc_comments_row_header">
+                    <a href="?mcc_comments_id=727" title="Подробнее"></a>
+                  </p>
+                  <h2>
+                    <a href="?mcc_comments_id=727" title="Подробнее">Благодарю за качественную работу!</a>
+                  </h2>
+                  <a href="?mcc_comments_id=727" title="Подробнее"></a>
+                  <p></p>
+                  <p class="mcc_comments_row_company">
+                    <span class="mcc_comments_row_company_title">Компания: </span>
+                    <span class="mcc_comments_row_company_value">ООО НОВАТЭК - Усть-Луга</span>
+                  </p>
+                  <p class="mcc_comments_row_comment">
+                    <span class="mcc_comments_row_comment_title">Комментарий: </span>
+                    <span class="mcc_comments_row_company_value">С центром "Тест Петербург Сертификация" наша компания работает с 2013 года, за этот период для нас были оформлены сертификаты соответствия на продукты, выпускаемые нашим Обществом, Декларации о соответствии Таможенного союза, Паспорта
+                      безопасности химической продукции. Все перечисленные документы были оформлены...</span>
+                  </p>
+                  <p class="mcc_comments_row_comment">
+                    <span class="mcc_comments_row_comment_title">Ответ: </span>
+                    <span class="mcc_comments_row_comment_title"></span>
+                  </p>
+                </div>
+                <div class="mcc_comments_rowNoImage_block mcc_comments_row_block" id="mcc_comments_rowNoImage_block576">
+                  <p class="mcc_comments_row_header">
+                    <a href="?mcc_comments_id=576" title="Подробнее"></a>
+                  </p>
+                  <h2>
+                    <a href="?mcc_comments_id=576" title="Подробнее">Новый отзыв</a>
+                  </h2>
+                  <a href="?mcc_comments_id=576" title="Подробнее"></a>
+                  <p></p>
+                  <p class="mcc_comments_row_company">
+                    <span class="mcc_comments_row_company_title">Компания: </span>
+                    <span class="mcc_comments_row_company_value">ЭлиРус</span>
+                  </p>
+                  <p class="mcc_comments_row_comment">
+                    <span class="mcc_comments_row_comment_title">Комментарий: </span>
+                    <span class="mcc_comments_row_company_value">Спасибо Вам огромное за качество и оперативность работы.</span>
+                  </p>
+                  <p class="mcc_comments_row_comment">
+                    <span class="mcc_comments_row_comment_title">Ответ: </span>
+                    <span class="mcc_comments_row_comment_title"></span>
+                  </p>
+                </div>
+                <div class="mcc_comments_rowNoImage_block mcc_comments_row_block" id="mcc_comments_rowNoImage_block572">
+                  <p class="mcc_comments_row_header">
+                    <a href="?mcc_comments_id=572" title="Подробнее"></a>
+                  </p>
+                  <h2>
+                    <a href="?mcc_comments_id=572" title="Подробнее">Отзыв о ЦС "Тест Петербург Сертификация"</a>
+                  </h2>
+                  <a href="?mcc_comments_id=572" title="Подробнее"></a>
+                  <p></p>
+                  <p class="mcc_comments_row_company">
+                    <span class="mcc_comments_row_company_title">Компания: </span>
+                    <span class="mcc_comments_row_company_value">Людмила</span>
+                  </p>
+                  <p class="mcc_comments_row_comment">
+                    <span class="mcc_comments_row_comment_title">Комментарий: </span>
+                    <span class="mcc_comments_row_company_value">Елена, спасибо Вам большое! Вот это я понимаю профессионал, что не спроси, все в ту же минуту. Молодец.</span>
+                  </p>
+                  <p class="mcc_comments_row_comment">
+                    <span class="mcc_comments_row_comment_title">Ответ: </span>
+                    <span class="mcc_comments_row_comment_title"></span>
+                  </p>
+                </div>
+                <div class="mcc_comments_rowNoImage_block mcc_comments_row_block" id="mcc_comments_rowNoImage_block493">
+                  <p class="mcc_comments_row_header">
+                    <a href="?mcc_comments_id=493" title="Подробнее"></a>
+                  </p>
+                  <h2>
+                    <a href="?mcc_comments_id=493" title="Подробнее">Новый отзыв</a>
+                  </h2>
+                  <a href="?mcc_comments_id=493" title="Подробнее"></a>
+                  <p></p>
+                  <p class="mcc_comments_row_company">
+                    <span class="mcc_comments_row_company_title">Компания: </span>
+                    <span class="mcc_comments_row_company_value">Новатэк</span>
+                  </p>
+                  <p class="mcc_comments_row_comment">
+                    <span class="mcc_comments_row_comment_title">Комментарий: </span>
+                    <span class="mcc_comments_row_company_value">Елена, огромное спасибо! ВСЕГО ВАМ ДОБРОГО! Надеюсь, что и в дальнейшем будем обращаться к Вам, т.к. с Вами работать одно удовольствие, качественно и быстро решаются все вопросы и ДОСТИГАЕТСЯ НЕОБХОДИМЫЙ РЕЗУЛЬТАТ!!!
+                      <br>
+                      <br>Светлана А.</span>
+                  </p>
+                  <p class="mcc_comments_row_comment">
+                    <span class="mcc_comments_row_comment_title">Ответ: </span>
+                    <span class="mcc_comments_row_comment_title"></span>
+                  </p>
+                </div>
+                <div class="mcc_comments_rowNoImage_block mcc_comments_row_block" id="mcc_comments_rowNoImage_block354">
+                  <p class="mcc_comments_row_header">
+                    <a href="?mcc_comments_id=354" title="Подробнее"></a>
+                  </p>
+                  <h2>
+                    <a href="?mcc_comments_id=354" title="Подробнее">Отзыв о центре сертификации</a>
+                  </h2>
+                  <a href="?mcc_comments_id=354" title="Подробнее"></a>
+                  <p></p>
+                  <p class="mcc_comments_row_company">
+                    <span class="mcc_comments_row_company_title">Компания: </span>
+                    <span class="mcc_comments_row_company_value">ОАО Завком</span>
+                  </p>
+                  <p class="mcc_comments_row_comment">
+                    <span class="mcc_comments_row_comment_title">Комментарий: </span>
+                    <span class="mcc_comments_row_company_value">Зинаида, огромное спасибо за декларации и особенно за скидки для нашей компании. С Вами очень удобно и быстро работать. Денис</span>
+                  </p>
+                  <p class="mcc_comments_row_comment">
+                    <span class="mcc_comments_row_comment_title">Ответ: </span>
+                    <span class="mcc_comments_row_comment_title"></span>
+                  </p>
+                </div>
+                <div class="mcc_comments_rowNoImage_block mcc_comments_row_block" id="mcc_comments_rowNoImage_block316">
+                  <p class="mcc_comments_row_header">
+                    <a href="?mcc_comments_id=316" title="Подробнее"></a>
+                  </p>
+                  <h2>
+                    <a href="?mcc_comments_id=316" title="Подробнее">Отзыв о центре сертификации</a>
+                  </h2>
+                  <a href="?mcc_comments_id=316" title="Подробнее"></a>
+                  <p></p>
+                  <p class="mcc_comments_row_company">
+                    <span class="mcc_comments_row_company_title">Компания: </span>
+                    <span class="mcc_comments_row_company_value">Денис</span>
+                  </p>
+                  <p class="mcc_comments_row_comment">
+                    <span class="mcc_comments_row_comment_title">Комментарий: </span>
+                    <span class="mcc_comments_row_company_value">Елена, одна Вы из всех запросов прислали мне то, что я действительно искал. Вы умница.</span>
+                  </p>
+                  <p class="mcc_comments_row_comment">
+                    <span class="mcc_comments_row_comment_title">Ответ: </span>
+                    <span class="mcc_comments_row_comment_title"></span>
+                  </p>
+                </div>
+                <div class="mcc_comments_rowNoImage_block mcc_comments_row_block" id="mcc_comments_rowNoImage_block315">
+                  <p class="mcc_comments_row_header">
+                    <a href="?mcc_comments_id=315" title="Подробнее"></a>
+                  </p>
+                  <h2>
+                    <a href="?mcc_comments_id=315" title="Подробнее">Отзыв о центре сертификации</a>
+                  </h2>
+                  <a href="?mcc_comments_id=315" title="Подробнее"></a>
+                  <p></p>
+                  <p class="mcc_comments_row_company">
+                    <span class="mcc_comments_row_company_title">Компания: </span>
+                    <span class="mcc_comments_row_company_value">Крошка-Картошка СПБ</span>
+                  </p>
+                  <p class="mcc_comments_row_comment">
+                    <span class="mcc_comments_row_comment_title">Комментарий: </span>
+                    <span class="mcc_comments_row_company_value">Анастасия, спасибо огромное за вашу работу! Я считаю что это полностью Ваша заслуга - в вопросе отстаивания наших интересов. Спасибо еще раз!</span>
+                  </p>
+                  <p class="mcc_comments_row_comment">
+                    <span class="mcc_comments_row_comment_title">Ответ: </span>
+                    <span class="mcc_comments_row_comment_title"></span>
+                  </p>
+                </div>
+                <div class="mcc_comments_rowNoImage_block mcc_comments_row_block" id="mcc_comments_rowNoImage_block283">
+                  <p class="mcc_comments_row_header">
+                    <a href="?mcc_comments_id=283" title="Подробнее"></a>
+                  </p>
+                  <h2>
+                    <a href="?mcc_comments_id=283" title="Подробнее">Отзыв о компании "Тест Петербург Сертификация"</a>
+                  </h2>
+                  <a href="?mcc_comments_id=283" title="Подробнее"></a>
+                  <p></p>
+                  <p class="mcc_comments_row_company">
+                    <span class="mcc_comments_row_company_title">Компания: </span>
+                    <span class="mcc_comments_row_company_value">С.Е.М Индастри</span>
+                  </p>
+                  <p class="mcc_comments_row_comment">
+                    <span class="mcc_comments_row_comment_title">Комментарий: </span>
+                    <span class="mcc_comments_row_company_value">Любовь, огромное спасибо за вашу помощь и поддержку. Будем обращаться только к Вам! ЧК</span>
+                  </p>
+                  <p class="mcc_comments_row_comment">
+                    <span class="mcc_comments_row_comment_title">Ответ: </span>
+                    <span class="mcc_comments_row_comment_title"></span>
+                  </p>
+                </div>
+                <div class="mcc_comments_rowNoImage_block mcc_comments_row_block" id="mcc_comments_rowNoImage_block282">
+                  <p class="mcc_comments_row_header">
+                    <a href="?mcc_comments_id=282" title="Подробнее"></a>
+                  </p>
+                  <h2>
+                    <a href="?mcc_comments_id=282" title="Подробнее">Отзыв о компании "Тест Петербург Сертификация"</a>
+                  </h2>
+                  <a href="?mcc_comments_id=282" title="Подробнее"></a>
+                  <p></p>
+                  <p class="mcc_comments_row_company">
+                    <span class="mcc_comments_row_company_title">Компания: </span>
+                    <span class="mcc_comments_row_company_value">ООО Агора</span>
+                  </p>
+                  <p class="mcc_comments_row_comment">
+                    <span class="mcc_comments_row_comment_title">Комментарий: </span>
+                    <span class="mcc_comments_row_company_value">Елена, спасибо за профессионализм, оперативность и за эстетическое удовольствие полученное от работы с вами. Владимир</span>
+                  </p>
+                  <p class="mcc_comments_row_comment">
+                    <span class="mcc_comments_row_comment_title">Ответ: </span>
+                    <span class="mcc_comments_row_comment_title"></span>
+                  </p>
+                </div>
+                <div class="mcc_comments_rowNoImage_block mcc_comments_row_block" id="mcc_comments_rowNoImage_block281">
+                  <p class="mcc_comments_row_header">
+                    <a href="?mcc_comments_id=281" title="Подробнее"></a>
+                  </p>
+                  <h2>
+                    <a href="?mcc_comments_id=281" title="Подробнее">Отзыв о компании "Тест Петербург Сертификация"</a>
+                  </h2>
+                  <a href="?mcc_comments_id=281" title="Подробнее"></a>
+                  <p></p>
+                  <p class="mcc_comments_row_company">
+                    <span class="mcc_comments_row_company_title">Компания: </span>
+                    <span class="mcc_comments_row_company_value">ООО Реал Валь</span>
+                  </p>
+                  <p class="mcc_comments_row_comment">
+                    <span class="mcc_comments_row_comment_title">Комментарий: </span>
+                    <span class="mcc_comments_row_company_value">ЛЮБОВЬ, СПАСИБО, ОЧЕНЬ ПРИЯТНО РАБОТАТЬ С ВАШЕЙ КОМПАНИЕЙ И НЕПОСРЕДСТВЕННО С ВАМИ! АРТЕМ Ч.</span>
+                  </p>
+                  <p class="mcc_comments_row_comment">
+                    <span class="mcc_comments_row_comment_title">Ответ: </span>
+                    <span class="mcc_comments_row_comment_title"></span>
+                  </p>
+                </div>
+                <div class="mcc_comments_rowNoImage_block mcc_comments_row_block" id="mcc_comments_rowNoImage_block216">
+                  <p class="mcc_comments_row_header">
+                    <a href="?mcc_comments_id=216" title="Подробнее"></a>
+                  </p>
+                  <h2>
+                    <a href="?mcc_comments_id=216" title="Подробнее">Отзыв о Тест Петербург Сертификация</a>
+                  </h2>
+                  <a href="?mcc_comments_id=216" title="Подробнее"></a>
+                  <p></p>
+                  <p class="mcc_comments_row_company">
+                    <span class="mcc_comments_row_company_title">Компания: </span>
+                    <span class="mcc_comments_row_company_value">ООО "ТехноИмпорт"</span>
+                  </p>
+                  <p class="mcc_comments_row_comment">
+                    <span class="mcc_comments_row_comment_title">Комментарий: </span>
+                    <span class="mcc_comments_row_company_value">Спасибо за оформленную декларацию. Все очень оперативно! Александр.</span>
+                  </p>
+                  <p class="mcc_comments_row_comment">
+                    <span class="mcc_comments_row_comment_title">Ответ: </span>
+                    <span class="mcc_comments_row_comment_title"></span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Form question-->
+        <section class="form-question">
+          <div class="container">
+            <div class="form-question__inner">
+              <div class="form-question__img">
+                <img src="img/manager.png" alt="Elena" title="Elena">
+              </div>
+              <div class="form-manager" itemscope itemtype="http://schema.org/Person">
+                <h2 class="form-manager__title">Задайте вопрос нашему специалисту</h2>
+                <div class="form-manager__info">
+                  <span class="form-manager__name" itemprop="name">Ирина Владимировна</span>
+                  <a class="form-manager__skype" href="skype:skype01">irina-irina</a>
+                  <a class="form-manager__email" href="mailto:irina.manager@gortest.ru" target="_blank" itemprop="email">irina@testspb.ru</a>
+                </div>
+                <!-- MCC form question-->
+                <form class="mcc-form mcc-form-question mcc-form-only-form" id="mccqform" action="" method="post">
+                  <table>
+                    <tbody>
+                      <tr>
+                        <td class="mcc-label mcc-label-name">
+                          <div>Ваше имя:
+                            <span class="mcc-required">*</span>
+                          </div>
+                        </td>
+                        <td class="mcc-value mcc-value-name">
+                          <input class="mcc-text mcc-form-input" id="mcc_question_name" name="mcc_question_name" maxlength="255" value="" size="27" type="text">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="mcc-label mcc-label-phone">
+                          <div>Контактный телефон:</div>
+                        </td>
+                        <td class="mcc-value mcc-value-phone">
+                          <input class="mcc-text mcc-form-input" id="mcc_question_phone" name="mcc_question_phone" maxlength="30" value="" size="27" type="text">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="mcc-label mcc-label-email">
+                          <div>Контактный e-mail:
+                            <span class="mcc-required">*</span>
+                          </div>
+                        </td>
+                        <td class="mcc-value mcc-value-email">
+                          <input class="mcc-text mcc-form-input" id="mcc_question_email" name="mcc_question_email" maxlength="255" value="" size="27" type="text">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="mcc-label mcc-label-question">
+                          <div>Ваш вопрос:
+                            <span class="mcc-required">*</span>
+                          </div>
+                        </td>
+                        <td class="mcc-value mcc-value-question">
+                          <textarea class="mcc-text mcc-form-textarea" id="mcc_question_question" name="mcc_question_question" cols="50" rows="1"></textarea>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="mcc-label mcc-label-captchacode" style="display: none;"></td>
+                        <td class="mcc-captcha mcc-value-captcha">
+                          <div>
+                            <div class="mcc_captcha_block" id="mcc_captcha_block">
+                              <div class="recaptcha" id="recaptcha1">
+                                <div style="width: 304px; height: 78px;">
+                                  <div>
+                                    <iframe src="https://www.google.com/recaptcha/api2/anchor?k=6LeAaiYTAAAAADEv2Lz3Mb--6fmLFt97M9JIJ0xX&amp;co=aHR0cDovL3Rlc3RzcGIucnU6ODA.&amp;hl=ru&amp;v=r20170228102020&amp;size=normal&amp;cb=lwn8143gk7gg" title="виджет reCAPTCHA"
+                                      width="304" height="78" frameborder="0" scrolling="no" name="undefined"></iframe>
+                                  </div>
+                                  <textarea class="g-recaptcha-response" id="g-recaptcha-response" name="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid #c1c1c1; margin: 10px 25px; padding: 0px; resize: none;  display: none; ;"></textarea>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="mcc_captcha_reload" onclick="mcc_question_and_answer_form_captcha_reload( this, 'MCC_Captcha_Question0' )" title="Обновить картинку"></div>
+                          </div>
+                          <div class="mcc_captcha_block_after"></div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="mcc-label" style="display: none;"></td>
+                        <td>
+                          <input class="mcc-submit" name="mcc_submit" value="Спросить" type="submit">
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- News section-->
+        <section class="news-section">
+          <div class="container">
+            <h2 class="news-section__title">Новости</h2>
+            <div class="row">
+              <div class="col-xs-12 col-lg-6">
+                <div class="news-item">
+                  <div class="news-item__wrapper">
+                    <h3 class="news-item__title">Изменения в Градостроительном кодексе РФ: строительным компаниям следует срочно перейти в местные СРО</h3>
+                    <div class="news-item__text">
+                      <p>Сейчас согласно третьей части ст. 55. 6 ФЗ № 372 (от 03. 07. 2016), членами СРО, основанной на членстве субъектов, осуществляющих строительную деятельность, могут быть Сейчас согласно третьей части ст. 55. 6 ФЗ № 372 (от 03. 07.
+                        2016), членами СРО, основанной на членстве субъектов, осуществляющих строительную деятельность, могут быть Сейчас согласно третьей части ст. 55. 6 ФЗ № 372 (от 03. 07. 2016), членами СРО, основанной на членстве субъектов, осуществляющих
+                        строительную деятельность, могут быть </p>
+                    </div>
+                    <div class="news-item__date">Опубликовано 09.02.2017</div>
+                  </div>
+                  <a class="news-item__link" href="single-news.html">Читать полностью</a>
+                </div>
+              </div>
+              <div class="col-xs-12 col-lg-6">
+                <div class="news-item">
+                  <div class="news-item__wrapper">
+                    <h3 class="news-item__title">Изменения в Градостроительном кодексе РФ: строительным компаниям следует срочно перейти в местные СРО</h3>
+                    <div class="news-item__text">
+                      <p>Сейчас согласно третьей части ст. 55. 6 ФЗ № 372 (от 03. 07. 2016), членами СРО, основанной на членстве субъектов, осуществляющих строительную деятельность, могут быть Сейчас согласно третьей части ст. 55. 6 ФЗ № 372 (от 03. 07.
+                        2016), членами СРО, основанной на членстве субъектов, осуществляющих строительную деятельность, могут быть Сейчас согласно третьей части ст. 55. 6 ФЗ № 372 (от 03. 07. 2016), членами СРО, основанной на членстве субъектов, осуществляющих
+                        строительную деятельность, могут быть </p>
+                    </div>
+                    <div class="news-item__date">Опубликовано 09.02.2017</div>
+                  </div>
+                  <a class="news-item__link" href="single-news.html">Читать полностью</a>
+                </div>
+              </div>
+            </div>
+            <div class="news-section__btn">
+              <a class="btn btn--blue" href="page-news.html">Читать все новости</a>
+            </div>
+          </div>
+        </section>
+        <!-- Form cert-->
+        <section class="form-cert">
+          <div class="container">
+            <h1 class="form-cert__title">Закажите все необходимые документы у нас и сэкономьте свое время</h1>
+            <!-- MCC form cert-->
+            <form class="mcc-form mcc-form-order-certificate mcc-form-order-certificate-occ" id="mccoform_construct" method="post" action="">
+              <table>
+                <tbody>
+                  <tr>
+                    <td class="mcc-label mcc-label-name_of_product">
+                      <div>Наименование продукции:
+                        <span class="mcc-required">*</span>
+                      </div>
+                    </td>
+                    <td class="mcc-value mcc-value-name_of_product">
+                      <input class="mcc-text mcc-form-input" id="mcc_name_of_product" name="mcc_name_of_product" type="text" value="" maxlength="255">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="mcc-label mcc-label-name">
+                      <div>Ваше имя:
+                        <span class="mcc-required">*</span>
+                      </div>
+                    </td>
+                    <td class="mcc-value mcc-value-name">
+                      <input class="mcc-text mcc-form-input" id="mcc_name" name="mcc_name" type="text" value="">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="mcc-label mcc-label-email">
+                      <div>Ваш e-mail:
+                        <span class="mcc-required">*</span>
+                      </div>
+                    </td>
+                    <td class="mcc-value mcc-value-email">
+                      <input class="mcc-text mcc-form-input" id="mcc_email" name="mcc_email" type="text" value="">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="mcc-label mcc-label-phone">
+                      <div>Контактный телефон:</div>
+                    </td>
+                    <td class="mcc-value mcc-value-phone">
+                      <input class="mcc-text mcc-form-input" id="mcc_phone" name="mcc_phone" type="text" value="" maxlength="30">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="mcc-label mcc-label-captchacode" style="display: none;"></td>
+                    <td class="mcc-captcha mcc-value-captcha">
+                      <div>
+                        <div class="mcc_captcha_block" id="mcc_captcha_block">
+                          <div class="recaptcha" id="recaptcha1">
+                            <div style="width: 304px; height: 78px;">
+                              <div>
+                                <iframe src="https://www.google.com/recaptcha/api2/anchor?k=6LeAaiYTAAAAADEv2Lz3Mb--6fmLFt97M9JIJ0xX&amp;co=aHR0cDovL3Rlc3RzcGIucnU6ODA.&amp;hl=ru&amp;v=r20170228102020&amp;size=normal&amp;cb=pfrnyhc7yb61" title="виджет reCAPTCHA"
+                                  width="304" height="78" frameborder="0" scrolling="no" name="undefined"></iframe>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="mcc_captcha_block_after"></div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="mcc-label" style="display: none;">
+                      <!-- -->
+                    </td>
+                    <td>
+                      <input class="mcc-submit" type="submit" name="mcc_submit" value="Заказать документ">
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </form>
+          </div>
+        </section>
+        <!-- Clients + reviews-->
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12 col-lg-6">
+              <!-- Clients section-->
+              <section class="clients-section">
+                <h2 class="clients-section__title">С нами работают</h2>
+                <div class="clients-section__gallery">
+                  <div class="clients-section__item">
+                    <img src="img/client1.jpg" alt="client1" title="client1">
+                  </div>
+                  <div class="clients-section__item">
+                    <img src="img/client2.jpg" alt="client2" title="client2">
+                  </div>
+                  <div class="clients-section__item">
+                    <img src="img/client1.jpg" alt="client1" title="client1">
+                  </div>
+                  <div class="clients-section__item">
+                    <img src="img/client2.jpg" alt="client2" title="client2">
+                  </div>
+                </div>
+                <div class="clients-section__link">
+                  <a href="page-clients.html">Показать всех партнеров</a>
+                </div>
+              </section>
+            </div>
+            <div class="col-xs-12 col-lg-6">
+              <!-- Reviews section-->
+              <section class="reviews-section">
+                <h2 class="reviews-section__title">Отзывы</h2>
+                <div class="reviews-section__gallery">
+                  <div class="reviews-item">
+                    <div class="reviews-item__wrapper">
+                      <h3 class="reviews-item__name">Эксперт по налогообложению</h3>
+                      <div class="reviews-item__text">
+                        <p>Гортест Урал» — аккредитованный центр сертификации продукции и услуг Мы предлагаем нашим клиентам целый спектрцентр сертификации продукции и услуг Мы предлагаем нашим клиентам целый спектрцентр спектрцентр сертификации нашим клиентам
+                          целый спектрцентр спектрцентр сертификации</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="reviews-item">
+                    <div class="reviews-item__wrapper">
+                      <h3 class="reviews-item__name">Эксперт по налогообложению</h3>
+                      <div class="reviews-item__text">
+                        <p>Гортест Урал» — аккредитованный центр сертификации продукции и услуг Мы предлагаем нашим клиентам целый спектрцентр сертификации продукции и услуг Мы предлагаем нашим клиентам целый спектрцентр спектрцентр сертификации нашим клиентам
+                          целый спектрцентр спектрцентр сертификации</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="reviews-item">
+                    <div class="reviews-item__wrapper">
+                      <h3 class="reviews-item__name">Эксперт по налогообложению</h3>
+                      <div class="reviews-item__text">
+                        <p>Гортест Урал» — аккредитованный центр сертификации продукции и услуг Мы предлагаем нашим клиентам целый спектрцентр сертификации продукции и услуг Мы предлагаем нашим клиентам целый спектрцентр спектрцентр сертификации нашим клиентам
+                          целый спектрцентр спектрцентр сертификации</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="reviews-section__link">
+                  <a href="page-reviews.html">Показать все отзывы</a>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+        <!-- Map-->
+        <section class="map">
+          <div class="map__text">
+            <div class="container">
+              <div class="map__block">
+                <div class="map-contacts" itemscope itemtype="http://schema.org/ContactPoint">
+                  <h2 class="map-contacts__title">Контакты</h2>
+                  <div class="map-contacts__info">
+                    <div class="map-contacts__address">Кондратьевский пр., д. 62, к. 4</div>
+                    <div class="map-contacts__time">9:00- 20:00 пн-пт</div>
+                    <div class="map-contacts__tel-wrapper">
+                      <a href="tel:+78123212211" target="_blank" itemprop="telephone">+7 812 321-22-11</a>
+                    </div>
+                    <div class="map-contacts__email-wrapper">
+                      <a href="mailto:info@itservisspb.ru" target="_blank" itemprop="email">info@itservisspb.ru</a>
+                    </div>
+                    <div class="map-contacts__btn">
+                      <a class="btn" href="#" data-form="call">Обратный звонок</a>
+                    </div>
+                    <a class="map-contacts__more" href="page-contacts.html">+ еще 5 офисов по России</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="map__inner"></div>
+        </section>
+      </section>
+    </main>
+    <!-- Footer-->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__inner">
+          <div class="footer__info">
+            <div class="footer__copyright">
+              <p>© 2016</p>
+              <p>Тест Петербург Сертификация</p>
+            </div>
+            <div class="footer-contacts" itemscope itemtype="http://schema.org/ContactPoint">
+              <div class="footer-contacts__tel-wrapper">
+                <a class="footer-contacts__tel" href="tel:+78124413792" target="_blank" itemprop="telephone">+7 (812) 441-37-92</a>
+                <a class="footer-contacts__tel" href="tel:+78129216001" target="_blank" itemprop="telephone">+7 (812) 921-60-01</a>
+              </div>
+              <div class="footer-contacts__email-wrapper">
+                <a class="footer-contacts__email" href="mailto:info@testspb.ru" target="_blank" itemprop="email">info@testspb.ru</a>
+              </div>
+            </div>
+          </div>
+          <div class="footer__nav">
+            <!-- Nav-->
+            <nav class="nav-footer">
+              <ul class="nav-footer__list">
+                <li class="menu-item">
+                  <a href="page-services.html">Услуги</a>
+                </li>
+                <li class="menu-item">
+                  <a href="page-news.html">Новости сертификации</a>
+                </li>
+                <li class="menu-item">
+                  <a href="page.html">Мнения экспертов</a>
+                </li>
+                <li class="menu-item">
+                  <a href="page-about.html">О компании</a>
+                </li>
+                <li class="menu-item">
+                  <a href="page.html">Узнать стоимость</a>
+                </li>
+                <li class="menu-item">
+                  <a href="page.html">Базы кодов</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div class="footer__widget"> </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Overlay-->
+    <div class="overlay">
+      <div class="overlay__bg"></div>
+      <div class="overlay__form">
+        <a class="overlay__close" href="/"></a>
+        <!-- Form application-->
+        <section class="form form--application">
+          <h2 class="form__title">Рассчитать стоимость</h2>
+          <!-- MCC form cert-->
+          <form class="mcc-form mcc-form-order-certificate mcc-form-order-certificate-occ" id="mccoform_construct" method="post" action="">
+            <table>
+              <tbody>
+                <tr>
+                  <td class="mcc-label mcc-label-name_of_product">
+                    <div>Наименование продукции:
+                      <span class="mcc-required">*</span>
+                    </div>
+                  </td>
+                  <td class="mcc-value mcc-value-name_of_product">
+                    <input class="mcc-text mcc-form-input" id="mcc_name_of_product" name="mcc_name_of_product" type="text" value="" maxlength="255">
+                  </td>
+                </tr>
+                <tr>
+                  <td class="mcc-label mcc-label-name">
+                    <div>Ваше имя:
+                      <span class="mcc-required">*</span>
+                    </div>
+                  </td>
+                  <td class="mcc-value mcc-value-name">
+                    <input class="mcc-text mcc-form-input" id="mcc_name" name="mcc_name" type="text" value="">
+                  </td>
+                </tr>
+                <tr>
+                  <td class="mcc-label mcc-label-email">
+                    <div>Ваш e-mail:
+                      <span class="mcc-required">*</span>
+                    </div>
+                  </td>
+                  <td class="mcc-value mcc-value-email">
+                    <input class="mcc-text mcc-form-input" id="mcc_email" name="mcc_email" type="text" value="">
+                  </td>
+                </tr>
+                <tr>
+                  <td class="mcc-label mcc-label-phone">
+                    <div>Контактный телефон:</div>
+                  </td>
+                  <td class="mcc-value mcc-value-phone">
+                    <input class="mcc-text mcc-form-input" id="mcc_phone" name="mcc_phone" type="text" value="" maxlength="30">
+                  </td>
+                </tr>
+                <tr>
+                  <td class="mcc-label mcc-label-captchacode" style="display: none;"></td>
+                  <td class="mcc-captcha mcc-value-captcha">
+                    <div>
+                      <div class="mcc_captcha_block" id="mcc_captcha_block">
+                        <div class="recaptcha" id="recaptcha1">
+                          <div style="width: 304px; height: 78px;">
+                            <div>
+                              <iframe src="https://www.google.com/recaptcha/api2/anchor?k=6LeAaiYTAAAAADEv2Lz3Mb--6fmLFt97M9JIJ0xX&amp;co=aHR0cDovL3Rlc3RzcGIucnU6ODA.&amp;hl=ru&amp;v=r20170228102020&amp;size=normal&amp;cb=pfrnyhc7yb61" title="виджет reCAPTCHA"
+                                width="304" height="78" frameborder="0" scrolling="no" name="undefined"></iframe>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mcc_captcha_block_after"></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="mcc-label" style="display: none;">
+                    <!-- -->
+                  </td>
+                  <td>
+                    <input class="mcc-submit" type="submit" name="mcc_submit" value="Заказать документ">
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+        </section>
+        <!-- Form question-->
+        <section class="form form--question">
+          <h2 class="form__title">Задать вопрос</h2>
+          <!-- MCC form question-->
+          <form class="mcc-form mcc-form-question mcc-form-only-form" id="mccqform" action="" method="post">
+            <table>
+              <tbody>
+                <tr>
+                  <td class="mcc-label mcc-label-name">
+                    <div>Ваше имя:
+                      <span class="mcc-required">*</span>
+                    </div>
+                  </td>
+                  <td class="mcc-value mcc-value-name">
+                    <input class="mcc-text mcc-form-input" id="mcc_question_name" name="mcc_question_name" maxlength="255" value="" size="27" type="text">
+                  </td>
+                </tr>
+                <tr>
+                  <td class="mcc-label mcc-label-phone">
+                    <div>Контактный телефон:</div>
+                  </td>
+                  <td class="mcc-value mcc-value-phone">
+                    <input class="mcc-text mcc-form-input" id="mcc_question_phone" name="mcc_question_phone" maxlength="30" value="" size="27" type="text">
+                  </td>
+                </tr>
+                <tr>
+                  <td class="mcc-label mcc-label-email">
+                    <div>Контактный e-mail:
+                      <span class="mcc-required">*</span>
+                    </div>
+                  </td>
+                  <td class="mcc-value mcc-value-email">
+                    <input class="mcc-text mcc-form-input" id="mcc_question_email" name="mcc_question_email" maxlength="255" value="" size="27" type="text">
+                  </td>
+                </tr>
+                <tr>
+                  <td class="mcc-label mcc-label-question">
+                    <div>Ваш вопрос:
+                      <span class="mcc-required">*</span>
+                    </div>
+                  </td>
+                  <td class="mcc-value mcc-value-question">
+                    <textarea class="mcc-text mcc-form-textarea" id="mcc_question_question" name="mcc_question_question" cols="50" rows="10"></textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="mcc-label mcc-label-captchacode" style="display: none;"></td>
+                  <td class="mcc-captcha mcc-value-captcha">
+                    <div>
+                      <div class="mcc_captcha_block" id="mcc_captcha_block">
+                        <div class="recaptcha" id="recaptcha1">
+                          <div style="width: 304px; height: 78px;">
+                            <div>
+                              <iframe src="https://www.google.com/recaptcha/api2/anchor?k=6LeAaiYTAAAAADEv2Lz3Mb--6fmLFt97M9JIJ0xX&amp;co=aHR0cDovL3Rlc3RzcGIucnU6ODA.&amp;hl=ru&amp;v=r20170228102020&amp;size=normal&amp;cb=lwn8143gk7gg" title="виджет reCAPTCHA"
+                                width="304" height="78" frameborder="0" scrolling="no" name="undefined"></iframe>
+                            </div>
+                            <textarea class="g-recaptcha-response" id="g-recaptcha-response" name="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid #c1c1c1; margin: 10px 25px; padding: 0px; resize: none;  display: none; ;"></textarea>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="mcc_captcha_reload" onclick="mcc_question_and_answer_form_captcha_reload( this, 'MCC_Captcha_Question0' )" title="Обновить картинку"></div>
+                    </div>
+                    <div class="mcc_captcha_block_after"></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="mcc-label" style="display: none;"></td>
+                  <td>
+                    <input class="mcc-submit" name="mcc_submit" value="Спросить" type="submit">
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+        </section>
+        <!-- Form call-->
+        <section class="form form--call">
+          <h2 class="form__title">Заказать звонок</h2>
+          <!-- MCC form call-->
+          <form class="mcc-form mcc-form-order-call" id="mcccform" method="post" action="">
+            <table>
+              <tbody>
+                <tr>
+                  <td class="mcc-label mcc-label-name">
+                    <div>Ваше имя:
+                      <span class="mcc-required">*</span>
+                    </div>
+                  </td>
+                  <td class="mcc-value mcc-value-name">
+                    <input class="mcc-text mcc-form-input" id="mcc_name" name="mcc_name" type="text" value="" maxlength="255">
+                  </td>
+                </tr>
+                <tr>
+                  <td class="mcc-label mcc-label-phone">
+                    <div>Контактный телефон:
+                      <span class="mcc-required">*</span>
+                    </div>
+                  </td>
+                  <td class="mcc-value mcc-value-phone">
+                    <input class="mcc-text mcc-form-input" id="mcc_phone" name="mcc_phone" type="text" value="" maxlength="30">
+                  </td>
+                </tr>
+                <tr>
+                  <td class="mcc-label mcc-label-captchacode" style="display: none;"></td>
+                  <td class="mcc-captcha mcc-value-captcha">
+                    <div>
+                      <div class="mcc_captcha_block" id="mcc_captcha_block">
+                        <div class="recaptcha" id="recaptcha1">
+                          <div style="width: 304px; height: 78px;">
+                            <div>
+                              <iframe src="https://www.google.com/recaptcha/api2/anchor?k=6LeAaiYTAAAAADEv2Lz3Mb--6fmLFt97M9JIJ0xX&amp;co=aHR0cDovL3Rlc3RzcGIucnU6ODA.&amp;hl=ru&amp;v=r20170228102020&amp;size=normal&amp;cb=iqjd1fybcxkx" title="виджет reCAPTCHA"
+                                width="304" height="78" frameborder="0" scrolling="no" name="undefined"></iframe>
+                            </div>
+                            <textarea class="g-recaptcha-response" id="g-recaptcha-response" name="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid #c1c1c1; margin: 10px 25px; padding: 0px; resize: none;  display: none; ;"></textarea>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mcc_captcha_block_after"></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="mcc-label" style="display: none;">
+                    <!-- -->
+                  </td>
+                  <td>
+                    <input class="mcc-submit" type="submit" name="mcc_submit" value="Заказать звонок">
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+        </section>
+      </div>
+    </div>
+    <script src="js/script.min.js"></script>
+  </body>
+</html>

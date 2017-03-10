@@ -1,0 +1,598 @@
+extends partials/templates/_template.pug
+
+block content
+  +b.SECTION.page--reviews
+
+    // Breadcrumbs
+    +b.SECTION.breadcrumbs
+      .container
+        +e.inner
+          span Отзывы
+
+    // Reviews
+    +b.SECTION.reviews
+      .container
+        +e.content
+          +e.H2.title Оставьте свой отзыв
+          script(type='text/javascript').
+            function mcc_Comments_Api( get )
+            {
+            if( get=="FormFieldReqiured" )
+            {
+            return { "Company" : {"id" : "mcc_comments_company","error_empty" : "Укажите Вашу компанию"},
+            "Comment" : {"id" : "mcc_comments_comment","error_empty" : "Укажите Ваш отзыв"},
+            "Email" : {"id" : "mcc_comments_email","error_empty" : "Укажите Ваш контактный e-mail"} };
+            }
+            else if( get=="FormFieldCorrect" )
+            {
+            return { "Email" : {"id" : "mcc_comments_email","error_text" : "Такой почты не существует", "type" : "regular","regular":/^([a-zA-Z0-9_-]+\\.)*[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)*\.[a-zA-Z]{2,4}$/},
+            "Captcha" : {"id" : "mcc_comments_captcha","error_text" : "Нажмите на кнопку Я не робот", "type" : "captcha", "server" : "http://testspb.ru/captcha", "server_param":{ "mode":"Captcha","check":1 }, "server_tpl":{ "mode":"Captcha","viev":1,"captcha_id":"captcha_img" } } };
+            }
+            else if( get=="FileExt" )
+            {
+            return ["jpg","jpeg","png","gif","doc","docx","odf","xls","xlsx","ods","pdf","txt"];
+            }
+            else if( get=="FileExtError" )
+            {
+            return "Допускаются только Word, Excel, PDF - файлы и изображения";
+            }
+            else if( get=="FormFieldOptional" )
+            {
+            return { "Phone" : {"id" : "mcc_comments_phone","error_text" : "Укажите Ваш контактный телефон правильно", "type" : "regular","regular":/^[0-9\\-\+\(\)\ ]+$/} };
+            }
+            }
+            function mcc_CommentsSubmit( form )
+            {
+            var prefiks = '#' + form.id + ' ';
+            //-----Проверка обязательных полей
+            var req = mcc_Comments_Api( 'FormFieldReqiured' );
+            for(key in req)
+            {
+            if( !jQuery( prefiks + "#"+req[key]['id'] ).val() )
+            {
+            mcc_CommentsError( req[key]['id'], req[key]['error_empty'], prefiks );
+            return false;
+            }
+            }
+            //-----Проверка корректности ввода
+            req = mcc_Comments_Api( 'FormFieldCorrect' );
+            for(key in req)
+            {
+            if( req[key]['type']=='regular' )
+            {
+            var r = new RegExp( req[key]['regular'] );
+            if( !r.test( jQuery( prefiks + '#'+req[key]['id'] ).val() ) )
+            {
+            mcc_CommentsError( req[key]['id'], req[key]['error_text'], prefiks );
+            return false;
+            }
+            }
+            else if( req[key]['type']=='captcha' )
+            {
+            /*
+            req[key]['server_param']['word']= jQuery( prefiks + '#'+req[key]['id'] ).val();
+            var ret = '0';
+            jQuery.ajax(
+            {
+            url:req[key]['server'],
+            data:req[key]['server_param'],
+            cache:false,
+            async:false,
+            success:function(data)
+            {
+            ret = data;
+            }
+            });
+            if( ret=='0' )
+            {
+            jQuery.ajax(
+            {
+            url:req[key]['server'],
+            data:req[key]['server_tpl'],
+            cache:false,
+            async:false,
+            success:function(data)
+            {
+            jQuery( prefiks + '#'+req[key]['server_tpl']['captcha_id']).parent().html( data );
+            }
+            });
+            mcc_CommentsError( req[key]['id'], req[key]['error_text'], prefiks );
+            return false;
+            } */
+            }
+            }
+            //-----Проверяем правильное ли рассширение у файла
+            var file_val = jQuery( prefiks + "#mcc_comments_file_upload" ).val();
+            if( file_val )
+            {
+            var file_exts = mcc_Comments_Api("FileExt");
+            var file_ext = file_val.split('.');
+            file_ext = file_ext[ file_ext.length-1 ];
+            file_ext = file_ext.toLowerCase();
+            if( jQuery.inArray(file_ext, file_exts) == -1 )
+            {
+            mcc_CommentsError( "mcc_comments_file_upload", mcc_Comments_Api( "FileExtError" ), prefiks );
+            return false;
+            }
+            }
+            //-----Проверяем необязательные поля
+            req = mcc_Comments_Api( 'FormFieldOptional' );
+            for(key in req)
+            {
+            if( jQuery( prefiks + '#'+req[key]['id'] ).val() )
+            {
+            if( req[key]['type']=='regular' )
+            {
+            r = new RegExp( req[key]['regular'] );
+            if( !r.test( jQuery( prefiks + '#'+req[key]['id']).val() ) )
+            {
+            mcc_CommentsError( req[key]['id'], req[key]['error_text'], prefiks );
+            return false;
+            }
+            }
+            }
+            }
+            return true;
+            }
+            window.mcc_error_counter = 0;
+            /**
+            *
+            * @param id string
+            * @param text string
+            * @param text prefiks
+            * @return void
+            */
+            function mcc_CommentsError( id, text, prefiks )
+            {
+            window.mcc_error_counter++;
+            jQuery( prefiks + "#"+id ).parent().append( "<div class='mcc_error' id='mcc_error"+window.mcc_error_counter+"' style='display:none;'>" + text + "</div>") ;
+            jQuery( prefiks + "#"+id ).focus();
+            var border = jQuery( prefiks + "#"+id ).css( 'border' );
+            jQuery( prefiks + "#"+id ).css( 'border','2px solid red' );
+            jQuery( prefiks + "#mcc_error"+window.mcc_error_counter ).slideDown('slow',function()
+            {
+            setTimeout( function()
+            {
+            jQuery( prefiks + "#mcc_error"+window.mcc_error_counter ).slideUp('slow',function()
+            {
+            jQuery( ".mcc_error" ).remove();
+            jQuery( prefiks + "#"+id ).css( 'border',border );
+            });
+            }, 2000);
+            });
+            }
+          form#mcccform0.mcc-form(method='post', action='', enctype='multipart/form-data')
+            table
+              tbody
+                tr
+                  td.mcc-label
+                    div
+                      | Ваша компания: 
+                      span.mcc-required *
+                  td
+                    input#mcc_comments_company.mcc-text(name='mcc_comments_company', maxlength='255', value='', type='text')
+                tr
+                  td.mcc-label
+                    div
+                      | Ваш отзыв: 
+                      span.mcc-required *
+                  td
+                    textarea#mcc_comments_comment.mcc-text(name='mcc_comments_comment', cols='45', rows='5')
+                tr
+                  td.mcc-label
+                    div
+                      | Контактный e-mail: 
+                      span.mcc-required *
+                  td
+                    input#mcc_comments_email.mcc-text(name='mcc_comments_email', maxlength='255', value='', type='text')
+                tr
+                  td
+                  td
+                    #recaptcha1.recaptcha
+                      div(style='width: 304px; height: 78px;')
+                        div
+                          iframe(src='https://www.google.com/recaptcha/api2/anchor?k=6LeAaiYTAAAAADEv2Lz3Mb--6fmLFt97M9JIJ0xX&co=aHR0cDovL3Rlc3RzcGIucnU6ODA.&hl=ru&v=r20170228102020&size=normal&cb=pfrnyhc7yb61', title='виджет reCAPTCHA', width='304', height='78', frameborder='0', scrolling='no', name='undefined')
+                tr
+                  td
+                  td
+                    input.mcc-submit(name='mcc_submit', value='Оставить отзыв', type='submit')
+          #mcc_comments_rows_block
+            #mcc_comments_rowNoImage_block1957.mcc_comments_rowNoImage_block.mcc_comments_row_block
+              p.mcc_comments_row_header
+                a(href='?mcc_comments_id=1957', title='Подробнее')
+              h2
+                a(href='?mcc_comments_id=1957', title='Подробнее')     ООО Пегас
+              a(href='?mcc_comments_id=1957', title='Подробнее')
+              p
+              p.mcc_comments_row_company
+                span.mcc_comments_row_company_title Компания: 
+                span.mcc_comments_row_company_value ООО Пегас
+              p.mcc_comments_row_comment
+                span.mcc_comments_row_comment_title Комментарий: 
+                span.mcc_comments_row_company_value
+                  | Выполненная работа на высшем уровне! Быстро и качественно. Спасибо! Надеемся на дальнейшее сотрудничество.
+              p.mcc_comments_row_comment
+                span.mcc_comments_row_comment_title Ответ: 
+                span.mcc_comments_row_comment_title
+            #mcc_comments_rowNoImage_block1861.mcc_comments_rowNoImage_block.mcc_comments_row_block
+              p.mcc_comments_row_header
+                a(href='?mcc_comments_id=1861', title='Подробнее')
+              h2
+                a(href='?mcc_comments_id=1861', title='Подробнее')    ООО "Биомедиа"
+              a(href='?mcc_comments_id=1861', title='Подробнее')
+              p
+              p.mcc_comments_row_company
+                span.mcc_comments_row_company_title Компания: 
+                span.mcc_comments_row_company_value ООО "Биомедиа"
+              p.mcc_comments_row_comment
+                span.mcc_comments_row_comment_title Комментарий: 
+                span.mcc_comments_row_company_value
+                  | Мы оформляли отказное письмо на нашу продукцию. Все познается в сравнении. До этого мы обратились в компанию, с которой переписывались 2 недели (нашли в топе поисковика). В течение всего периода специалист уточнял у других специалистов, нужно ли все-таки декларировать или...
+              p.mcc_comments_row_comment
+                span.mcc_comments_row_comment_title Ответ: 
+                span.mcc_comments_row_comment_title
+            #mcc_comments_rowNoImage_block867.mcc_comments_rowNoImage_block.mcc_comments_row_block
+              p.mcc_comments_row_header
+                a(href='?mcc_comments_id=867', title='Подробнее')
+              h2
+                a(href='?mcc_comments_id=867', title='Подробнее')  
+              a(href='?mcc_comments_id=867', title='Подробнее')
+              p
+              p.mcc_comments_row_company
+                span.mcc_comments_row_company_title Компания: 
+                span.mcc_comments_row_company_value МакГрегор
+              p.mcc_comments_row_comment
+                span.mcc_comments_row_comment_title Комментарий: 
+                span.mcc_comments_row_company_value
+                  | Уважаемая Ксения Александровна!
+                  | Благодарю Вас за предварительную консультацию по вопросам сертификации и действующих правил Таможенного Союза. Неожиданно приятно, что профессиональное решение могут подсказать попутчики в транспорте, в своё нерабочее время.
+                  | Остаётся выразить огромное уважение Вам и  Вашему руководству за таких...
+              p.mcc_comments_row_comment
+                span.mcc_comments_row_comment_title Ответ: 
+                span.mcc_comments_row_comment_title
+            #mcc_comments_rowNoImage_block837.mcc_comments_rowNoImage_block.mcc_comments_row_block
+              p.mcc_comments_row_header
+                a(href='?mcc_comments_id=837', title='Подробнее')
+              h2
+                a(href='?mcc_comments_id=837', title='Подробнее') Спасибо вам!
+              a(href='?mcc_comments_id=837', title='Подробнее')
+              p
+              p.mcc_comments_row_company
+                span.mcc_comments_row_company_title Компания: 
+                span.mcc_comments_row_company_value ООО "Альфа Судовые Средства"
+              p.mcc_comments_row_comment
+                span.mcc_comments_row_comment_title Комментарий: 
+                span.mcc_comments_row_company_value
+                  | Наша компания, начиная с 2013 года, многократно обращалась к "Тест--Петербург" для оформления Технических условий и Инструкций по эксплуатации спасательного оборудования, Деклараций о соответствии Таможенного союза, сертификатов системы ГОСТ-Р или отказных писем.
+                  | Всякий раз документы оформлялись оперативно, профессионально, что оказывало большую помощь...
+              p.mcc_comments_row_comment
+                span.mcc_comments_row_comment_title Ответ: 
+                span.mcc_comments_row_comment_title
+            #mcc_comments_rowNoImage_block786.mcc_comments_rowNoImage_block.mcc_comments_row_block
+              p.mcc_comments_row_header
+                a(href='?mcc_comments_id=786', title='Подробнее')
+              h2
+                a(href='?mcc_comments_id=786', title='Подробнее') Большое спасибо
+              a(href='?mcc_comments_id=786', title='Подробнее')
+              p
+              p.mcc_comments_row_company
+                span.mcc_comments_row_company_title Компания: 
+                span.mcc_comments_row_company_value ИП Голубева
+              p.mcc_comments_row_comment
+                span.mcc_comments_row_comment_title Комментарий: 
+                span.mcc_comments_row_company_value
+                  | Оформляли декларации о соответствии. Наша заявка была обработана Алёной на 5+, большое ей спасибо.
+                  | В дальнейшем буду обращаться только к Вам!
+              p.mcc_comments_row_comment
+                span.mcc_comments_row_comment_title Ответ: 
+                span.mcc_comments_row_comment_title
+            #mcc_comments_rowNoImage_block784.mcc_comments_rowNoImage_block.mcc_comments_row_block
+              p.mcc_comments_row_header
+                a(href='?mcc_comments_id=784', title='Подробнее')
+              h2
+                a(href='?mcc_comments_id=784', title='Подробнее') РЕКОМЕНДУЮ 
+              a(href='?mcc_comments_id=784', title='Подробнее')
+              p
+              p.mcc_comments_row_company
+                span.mcc_comments_row_company_title Компания: 
+                span.mcc_comments_row_company_value ИП Исаков
+              p.mcc_comments_row_comment
+                span.mcc_comments_row_comment_title Комментарий: 
+                span.mcc_comments_row_company_value
+                  | добрый день. заказывал сертификацию на хлебную продукцию. ОЦЕНКА 5+ РЕКОМЕНДУЮ ВСЕМ кто ценит свое время...
+              p.mcc_comments_row_comment
+                span.mcc_comments_row_comment_title Ответ: 
+                span.mcc_comments_row_comment_title
+            #mcc_comments_rowNoImage_block770.mcc_comments_rowNoImage_block.mcc_comments_row_block
+              p.mcc_comments_row_header
+                a(href='?mcc_comments_id=770', title='Подробнее')
+              h2
+                a(href='?mcc_comments_id=770', title='Подробнее') ООО "ЦНЭ МурманТест"
+              a(href='?mcc_comments_id=770', title='Подробнее')
+              p
+              p.mcc_comments_row_company
+                span.mcc_comments_row_company_title Компания: 
+                span.mcc_comments_row_company_value ООО "ЦНЭ МурманТест"
+              p.mcc_comments_row_comment
+                span.mcc_comments_row_comment_title Комментарий: 
+                span.mcc_comments_row_company_value
+                  | Оформляли СГР. Все сделали очень быстро, раньше срока, не возникло ни каких сложностей..
+                  | Заказывали СГР на товары бельевого ассортимента для детей до 3 лет. При необходимости будем обращаться сами и рекомендовать всем заинтересованным людям. Работали с Еленой Дедуель. Огромное спасибо!!!...
+              p.mcc_comments_row_comment
+                span.mcc_comments_row_comment_title Ответ: 
+                span.mcc_comments_row_comment_title
+            #mcc_comments_rowNoImage_block762.mcc_comments_rowNoImage_block.mcc_comments_row_block
+              p.mcc_comments_row_header
+                a(href='?mcc_comments_id=762', title='Подробнее')
+              h2
+                a(href='?mcc_comments_id=762', title='Подробнее') ЗАО "Упонор Инфра"
+              a(href='?mcc_comments_id=762', title='Подробнее')
+              p
+              p.mcc_comments_row_company
+                span.mcc_comments_row_company_title Компания: 
+                span.mcc_comments_row_company_value ЗАО "Упонор Инфра"
+              p.mcc_comments_row_comment
+                span.mcc_comments_row_comment_title Комментарий: 
+                span.mcc_comments_row_company_value
+                  | Оформляли СГР, как и обещали сделали все быстро и в назначенный срок, не возникло ни каких сложностей по данному вопросу.
+                  | Заказывали СГР для оформления обязательного сертификата на напорные трубы.
+                  | Все утроило и ни каких претензий нет.
+                  | Обязательно буду рекомендовать Вашу компанию нашим коллегам.
+              p.mcc_comments_row_comment
+                span.mcc_comments_row_comment_title Ответ: 
+                span.mcc_comments_row_comment_title
+            #mcc_comments_rowNoImage_block747.mcc_comments_rowNoImage_block.mcc_comments_row_block
+              p.mcc_comments_row_header
+                a(href='?mcc_comments_id=747', title='Подробнее')
+              h2
+                a(href='?mcc_comments_id=747', title='Подробнее') Верное решение!
+              a(href='?mcc_comments_id=747', title='Подробнее')
+              p
+              p.mcc_comments_row_company
+                span.mcc_comments_row_company_title Компания: 
+                span.mcc_comments_row_company_value ООО "ХТМ"
+              p.mcc_comments_row_comment
+                span.mcc_comments_row_comment_title Комментарий: 
+                span.mcc_comments_row_company_value
+                  | Наша компания сотрудничает с Тест Петербург Сертификация уже несколько лет. За все время работы радует высокий профессионализм и внимательность сотрудников, скорость получения документов, приемлемые цены. (работаем с Зинаидой). По всем вопросам можно получить грамотную консультацию и принять верное решение.
+              p.mcc_comments_row_comment
+                span.mcc_comments_row_comment_title Ответ: 
+                span.mcc_comments_row_comment_title
+            #mcc_comments_rowNoImage_block746.mcc_comments_rowNoImage_block.mcc_comments_row_block
+              p.mcc_comments_row_header
+                a(href='?mcc_comments_id=746', title='Подробнее')
+              h2
+                a(href='?mcc_comments_id=746', title='Подробнее') ООО Первый Мурманский Терминал
+              a(href='?mcc_comments_id=746', title='Подробнее')
+              p
+              p.mcc_comments_row_company
+                span.mcc_comments_row_company_title Компания: 
+                span.mcc_comments_row_company_value ООО Первый Мурманский Терминал
+              p.mcc_comments_row_comment
+                span.mcc_comments_row_comment_title Комментарий: 
+                span.mcc_comments_row_company_value
+                  | Проводили декларирование топлива (для подтверждения качества  топлива, поставляемого на судовую технику), все доступно, просто и оперативно. С поставленной задачей справились на отлично. Понравилась компетентность ваших работников в данном вопросе, особенно Алены Заревой. При возникновении необходимости, будем обращаться именно в...
+              p.mcc_comments_row_comment
+                span.mcc_comments_row_comment_title Ответ: 
+                span.mcc_comments_row_comment_title
+            #mcc_comments_rowNoImage_block728.mcc_comments_rowNoImage_block.mcc_comments_row_block
+              p.mcc_comments_row_header
+                a(href='?mcc_comments_id=728', title='Подробнее')
+              h2
+                a(href='?mcc_comments_id=728', title='Подробнее') Благодарю за работу!
+              a(href='?mcc_comments_id=728', title='Подробнее')
+              p
+              p.mcc_comments_row_company
+                span.mcc_comments_row_company_title Компания: 
+                span.mcc_comments_row_company_value Группа компаний ООО БиоЛайн
+              p.mcc_comments_row_comment
+                span.mcc_comments_row_comment_title Комментарий: 
+                span.mcc_comments_row_company_value
+                  | Мы уже несколько лет сотрудничаем с центром "Тест Петербург Сертификация". В нашей компании я занимаюсь оформлением сертификаций и деклараций соответствия. Я очень довольна работой нашего менеджера Елены. Документы всегда оформляются быстро и в срок, без заминок.  Елена всегда готова...
+              p.mcc_comments_row_comment
+                span.mcc_comments_row_comment_title Ответ: 
+                span.mcc_comments_row_comment_title
+            #mcc_comments_rowNoImage_block727.mcc_comments_rowNoImage_block.mcc_comments_row_block
+              p.mcc_comments_row_header
+                a(href='?mcc_comments_id=727', title='Подробнее')
+              h2
+                a(href='?mcc_comments_id=727', title='Подробнее') Благодарю за качественную работу!
+              a(href='?mcc_comments_id=727', title='Подробнее')
+              p
+              p.mcc_comments_row_company
+                span.mcc_comments_row_company_title Компания: 
+                span.mcc_comments_row_company_value ООО НОВАТЭК - Усть-Луга
+              p.mcc_comments_row_comment
+                span.mcc_comments_row_comment_title Комментарий: 
+                span.mcc_comments_row_company_value
+                  | С центром "Тест Петербург Сертификация" наша компания работает с 2013 года, за этот период для нас были оформлены сертификаты соответствия на продукты, выпускаемые нашим Обществом, Декларации о соответствии Таможенного союза, Паспорта безопасности химической продукции.  Все перечисленные документы были оформлены...
+              p.mcc_comments_row_comment
+                span.mcc_comments_row_comment_title Ответ: 
+                span.mcc_comments_row_comment_title
+            #mcc_comments_rowNoImage_block576.mcc_comments_rowNoImage_block.mcc_comments_row_block
+              p.mcc_comments_row_header
+                a(href='?mcc_comments_id=576', title='Подробнее')
+              h2
+                a(href='?mcc_comments_id=576', title='Подробнее') Новый отзыв
+              a(href='?mcc_comments_id=576', title='Подробнее')
+              p
+              p.mcc_comments_row_company
+                span.mcc_comments_row_company_title Компания: 
+                span.mcc_comments_row_company_value ЭлиРус
+              p.mcc_comments_row_comment
+                span.mcc_comments_row_comment_title Комментарий: 
+                span.mcc_comments_row_company_value Спасибо Вам огромное за качество и оперативность работы.
+              p.mcc_comments_row_comment
+                span.mcc_comments_row_comment_title Ответ: 
+                span.mcc_comments_row_comment_title
+            #mcc_comments_rowNoImage_block572.mcc_comments_rowNoImage_block.mcc_comments_row_block
+              p.mcc_comments_row_header
+                a(href='?mcc_comments_id=572', title='Подробнее')
+              h2
+                a(href='?mcc_comments_id=572', title='Подробнее') Отзыв о ЦС "Тест Петербург Сертификация"
+              a(href='?mcc_comments_id=572', title='Подробнее')
+              p
+              p.mcc_comments_row_company
+                span.mcc_comments_row_company_title Компания: 
+                span.mcc_comments_row_company_value Людмила
+              p.mcc_comments_row_comment
+                span.mcc_comments_row_comment_title Комментарий: 
+                span.mcc_comments_row_company_value
+                  | Елена, спасибо Вам большое! Вот это я понимаю профессионал, что не спроси, все в ту же минуту. Молодец.
+              p.mcc_comments_row_comment
+                span.mcc_comments_row_comment_title Ответ: 
+                span.mcc_comments_row_comment_title
+            #mcc_comments_rowNoImage_block493.mcc_comments_rowNoImage_block.mcc_comments_row_block
+              p.mcc_comments_row_header
+                a(href='?mcc_comments_id=493', title='Подробнее')
+              h2
+                a(href='?mcc_comments_id=493', title='Подробнее') Новый отзыв
+              a(href='?mcc_comments_id=493', title='Подробнее')
+              p
+              p.mcc_comments_row_company
+                span.mcc_comments_row_company_title Компания: 
+                span.mcc_comments_row_company_value Новатэк
+              p.mcc_comments_row_comment
+                span.mcc_comments_row_comment_title Комментарий: 
+                span.mcc_comments_row_company_value
+                  | Елена, огромное спасибо! ВСЕГО ВАМ ДОБРОГО! Надеюсь, что и в дальнейшем будем обращаться к Вам, т.к. с Вами работать одно удовольствие, качественно и быстро решаются все вопросы и ДОСТИГАЕТСЯ НЕОБХОДИМЫЙ РЕЗУЛЬТАТ!!!
+                  br
+                  br
+                  | Светлана А.
+              p.mcc_comments_row_comment
+                span.mcc_comments_row_comment_title Ответ: 
+                span.mcc_comments_row_comment_title
+            #mcc_comments_rowNoImage_block354.mcc_comments_rowNoImage_block.mcc_comments_row_block
+              p.mcc_comments_row_header
+                a(href='?mcc_comments_id=354', title='Подробнее')
+              h2
+                a(href='?mcc_comments_id=354', title='Подробнее') Отзыв о центре сертификации
+              a(href='?mcc_comments_id=354', title='Подробнее')
+              p
+              p.mcc_comments_row_company
+                span.mcc_comments_row_company_title Компания: 
+                span.mcc_comments_row_company_value ОАО Завком
+              p.mcc_comments_row_comment
+                span.mcc_comments_row_comment_title Комментарий: 
+                span.mcc_comments_row_company_value
+                  | Зинаида, огромное спасибо за декларации и особенно за скидки для нашей компании. С Вами очень удобно и быстро работать. Денис
+              p.mcc_comments_row_comment
+                span.mcc_comments_row_comment_title Ответ: 
+                span.mcc_comments_row_comment_title
+            #mcc_comments_rowNoImage_block316.mcc_comments_rowNoImage_block.mcc_comments_row_block
+              p.mcc_comments_row_header
+                a(href='?mcc_comments_id=316', title='Подробнее')
+              h2
+                a(href='?mcc_comments_id=316', title='Подробнее') Отзыв о центре сертификации
+              a(href='?mcc_comments_id=316', title='Подробнее')
+              p
+              p.mcc_comments_row_company
+                span.mcc_comments_row_company_title Компания: 
+                span.mcc_comments_row_company_value Денис
+              p.mcc_comments_row_comment
+                span.mcc_comments_row_comment_title Комментарий: 
+                span.mcc_comments_row_company_value
+                  | Елена, одна Вы из всех запросов прислали мне то, что я действительно искал. Вы умница.
+              p.mcc_comments_row_comment
+                span.mcc_comments_row_comment_title Ответ: 
+                span.mcc_comments_row_comment_title
+            #mcc_comments_rowNoImage_block315.mcc_comments_rowNoImage_block.mcc_comments_row_block
+              p.mcc_comments_row_header
+                a(href='?mcc_comments_id=315', title='Подробнее')
+              h2
+                a(href='?mcc_comments_id=315', title='Подробнее') Отзыв о центре сертификации
+              a(href='?mcc_comments_id=315', title='Подробнее')
+              p
+              p.mcc_comments_row_company
+                span.mcc_comments_row_company_title Компания: 
+                span.mcc_comments_row_company_value Крошка-Картошка СПБ
+              p.mcc_comments_row_comment
+                span.mcc_comments_row_comment_title Комментарий: 
+                span.mcc_comments_row_company_value
+                  | Анастасия, спасибо огромное за вашу работу! Я  считаю что это полностью Ваша заслуга - в вопросе отстаивания наших интересов. Спасибо еще раз!
+              p.mcc_comments_row_comment
+                span.mcc_comments_row_comment_title Ответ: 
+                span.mcc_comments_row_comment_title
+            #mcc_comments_rowNoImage_block283.mcc_comments_rowNoImage_block.mcc_comments_row_block
+              p.mcc_comments_row_header
+                a(href='?mcc_comments_id=283', title='Подробнее')
+              h2
+                a(href='?mcc_comments_id=283', title='Подробнее') Отзыв о компании "Тест Петербург Сертификация"
+              a(href='?mcc_comments_id=283', title='Подробнее')
+              p
+              p.mcc_comments_row_company
+                span.mcc_comments_row_company_title Компания: 
+                span.mcc_comments_row_company_value С.Е.М Индастри
+              p.mcc_comments_row_comment
+                span.mcc_comments_row_comment_title Комментарий: 
+                span.mcc_comments_row_company_value
+                  | Любовь, огромное спасибо за вашу помощь и поддержку. Будем обращаться только к Вам! ЧК
+              p.mcc_comments_row_comment
+                span.mcc_comments_row_comment_title Ответ: 
+                span.mcc_comments_row_comment_title
+            #mcc_comments_rowNoImage_block282.mcc_comments_rowNoImage_block.mcc_comments_row_block
+              p.mcc_comments_row_header
+                a(href='?mcc_comments_id=282', title='Подробнее')
+              h2
+                a(href='?mcc_comments_id=282', title='Подробнее') Отзыв о компании "Тест Петербург Сертификация"
+              a(href='?mcc_comments_id=282', title='Подробнее')
+              p
+              p.mcc_comments_row_company
+                span.mcc_comments_row_company_title Компания: 
+                span.mcc_comments_row_company_value ООО Агора
+              p.mcc_comments_row_comment
+                span.mcc_comments_row_comment_title Комментарий: 
+                span.mcc_comments_row_company_value
+                  | Елена, спасибо за профессионализм, оперативность и за эстетическое удовольствие полученное от работы с вами. Владимир
+              p.mcc_comments_row_comment
+                span.mcc_comments_row_comment_title Ответ: 
+                span.mcc_comments_row_comment_title
+            #mcc_comments_rowNoImage_block281.mcc_comments_rowNoImage_block.mcc_comments_row_block
+              p.mcc_comments_row_header
+                a(href='?mcc_comments_id=281', title='Подробнее')
+              h2
+                a(href='?mcc_comments_id=281', title='Подробнее') Отзыв о компании "Тест Петербург Сертификация"
+              a(href='?mcc_comments_id=281', title='Подробнее')
+              p
+              p.mcc_comments_row_company
+                span.mcc_comments_row_company_title Компания: 
+                span.mcc_comments_row_company_value ООО Реал Валь
+              p.mcc_comments_row_comment
+                span.mcc_comments_row_comment_title Комментарий: 
+                span.mcc_comments_row_company_value
+                  | ЛЮБОВЬ, СПАСИБО, ОЧЕНЬ ПРИЯТНО РАБОТАТЬ С ВАШЕЙ КОМПАНИЕЙ И НЕПОСРЕДСТВЕННО С ВАМИ! АРТЕМ Ч.
+              p.mcc_comments_row_comment
+                span.mcc_comments_row_comment_title Ответ: 
+                span.mcc_comments_row_comment_title
+            #mcc_comments_rowNoImage_block216.mcc_comments_rowNoImage_block.mcc_comments_row_block
+              p.mcc_comments_row_header
+                a(href='?mcc_comments_id=216', title='Подробнее')
+              h2
+                a(href='?mcc_comments_id=216', title='Подробнее') Отзыв о Тест Петербург Сертификация
+              a(href='?mcc_comments_id=216', title='Подробнее')
+              p
+              p.mcc_comments_row_company
+                span.mcc_comments_row_company_title Компания: 
+                span.mcc_comments_row_company_value ООО "ТехноИмпорт"
+              p.mcc_comments_row_comment
+                span.mcc_comments_row_comment_title Комментарий: 
+                span.mcc_comments_row_company_value Спасибо за оформленную декларацию. Все очень оперативно! Александр.
+              p.mcc_comments_row_comment
+                span.mcc_comments_row_comment_title Ответ: 
+                span.mcc_comments_row_comment_title
+
+    // Form question
+    include partials/components/_form-question.pug
+    // News section
+    include partials/components/_news-section.pug    
+    // Form cert
+    include partials/components/_form-cert.pug
+    // Clients + reviews
+    include partials/components/_clients-reviews.pug
+    // Map
+    include partials/components/_map.pug
+
+
+
+
+

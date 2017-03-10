@@ -33,4 +33,13 @@
       }
     }
   }
+  &--reviews{
+    .reviews{
+      padding-bottom: 0;
+      &__title{
+        padding-top: 40px;
+        background-color: $grey-bg;
+      }
+    }
+  }
 }
